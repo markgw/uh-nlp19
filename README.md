@@ -1,2 +1,3 @@
-# uh-nlp19
-Course materials for NLP course at the University of Helsinki in 2019
+# Natural Language Processing (2019)
+
+Course materials for NLP course at the University of Helsinki in 2019.
