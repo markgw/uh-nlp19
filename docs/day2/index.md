@@ -1,4 +1,4 @@
-Day 2: NLU pipeline and toolkits
+Day 2: NLU Pipeline and Toolkits
 ================================
 
 *Assignments to be written*
