@@ -1,1 +1,7 @@
 theme: jekyll-theme-dinky
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default" # Use our default layout (with navigation) on all pages
