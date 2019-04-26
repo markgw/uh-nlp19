@@ -8,4 +8,4 @@ On this site, you will find all the assignments. These
 are carried out in daily practical sessions, every afternoon.
 
 Assignments for each day:
- - [Day 1](day1.html)
+ - [Day 1](day1/)
