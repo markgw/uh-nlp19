@@ -19,7 +19,7 @@
         <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% include navigation.html %}
-        
+
         <ul>
           {% if site.show_downloads %}
             <li class="download"><a class="buttons" href="{{ site.github.zip_url }}">Download ZIP</a></li>
@@ -34,7 +34,7 @@
       </section>
 
       <footer>
-        <p><a class="buttons github" href="{{ site.github.repository_url }}">View On GitHub</a></p>
+        <p><a href="{{ site.github.repository_url }}">View On GitHub</a></p>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
