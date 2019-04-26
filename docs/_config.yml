@@ -5,3 +5,5 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default" # Use our default layout (with navigation) on all pages
+title: "NLP 2019"
+description: "Assignments for intensive NLP course, University of Helsinki"
