@@ -1,0 +1,2 @@
+pdftoppm example_tree1.pdf example_tree1 -png -singlefile -scale-to 500
+
