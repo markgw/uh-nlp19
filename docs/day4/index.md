@@ -1,9 +1,6 @@
 Day 4: Syntax and Parsing
 =========================
 
-* TOC
-{:toc}
-
 # Section 1: CFGs with NLTK
 
 ## Exercise 1: Basic CFG use
