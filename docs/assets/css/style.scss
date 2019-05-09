@@ -3,10 +3,15 @@
 
 @import 'jekyll-theme-dinky';
 
+header {
+    margin-top: 0px;
+}
+
 header ul {
     list-style:none;
     padding:0;
-    margin-top: 4px
+    margin-top: 8px;
+    margin-bottom: 4px;
 }
 header li {
     list-style-type:none;

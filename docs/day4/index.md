@@ -1,9 +1,9 @@
-Day 4: Syntax and Parsing
-=========================
+# Day 4: Syntax and Parsing
 
-# Section 1: CFGs with NLTK
 
-## Exercise 1: Basic CFG use
+## Section 1: CFGs with NLTK
+
+### Exercise 1: Basic CFG use
 
 NLTK contains a method for loading a CFG from a string.
 Here, for example, is the small CFG given in the lecture,
@@ -48,7 +48,7 @@ print(small_cfg.is_flexible_chomsky_normal_form())
 
 
 
-## Exercise 2: Extending the grammar
+### Exercise 2: Extending the grammar
 
 The NLTK CFG type has a method to check that
 all the words of the input sentence are covered
@@ -77,7 +77,7 @@ for s in sentences:
  * **Submit the additional rules you needed to add**
 
 
-## Exercise 3: Converting to CNF
+### Exercise 3: Converting to CNF
 
 So far, we've only run sanity checks that the words
 of sentences are covered by the grammar. We haven't
@@ -112,7 +112,7 @@ where `B2` is a new non-terminal.
 
 
 
-## Exercise 4: Parsing with the grammar
+### Exercise 4: Parsing with the grammar
 
 Load a bottom-up chart parser and initialize it with
 your CNF grammar:
@@ -148,10 +148,10 @@ parse result graphically.)
 
 
 
-# Section 2: Treebank parser
+## Section 2: Treebank parser
 
 
-## Exercise 5: Treebank grammar
+### Exercise 5: Treebank grammar
 
 NLTK provides easy access to a 10% sample of the Penn
 Treebank. The full treebank is not available without a
@@ -193,7 +193,7 @@ Alan introduced a plan .
 
 
 
-## Exercise 6
+### Exercise 6: Probabilities
 
 You will have noticed that your treebank parser produced
 a huge number of parse trees for even very short sentences.
@@ -223,8 +223,38 @@ distribution for `S -> ?` rules.
    and the counts needed to estimate them.**
 
 
+### Exercise 7: PCFG
+NLTK provides a tool to estimate all the probabilities of
+a PCFG from the productions in a treebank.
 
-## Exercise 7
+````python
+from nltk import induce_pcfg
+pcfg = induce_pcfg(Nonterminal("S"), productions)
+````
+
+The probabilities are computed in the same way you did
+in the previous exercise.
+
+NLTK's `InsideChartParser` provides a probabilistic version
+of the chart parsing algorithm you used above. It has
+a `beam_size` parameter, allowing you to perform
+beam search to speed up parsing.
+
+Try parsing the example sentences above, this time with
+the PCFG. Experiment with the `beam_size` parameter.
+
+The first parse is now that favoured by the statistical
+model and should therefore look much more reasonable than
+a randomly chosen example from the exhaustive parse.
+Take a look at the top parse(s) and see what you think.
+
+ * What happens if the beam size is too low?
+ * Or too high?
+ * Do the top parses look better? Are they perfect?
+ * **Submit your answers**
+
+
+### Exercise 8: Out-of-domain parsing
 
 Now we'll try parsing some data that wasn't in the training
 corpus. Your parser can only process sentences made up of
