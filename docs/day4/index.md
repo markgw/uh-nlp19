@@ -227,7 +227,7 @@ distribution for `S -> ?` rules.
 
 
 
-# Exercise 7
+## Exercise 7
 
 Now we'll try parsing some data that wasn't in the training
 corpus. Your parser can only process sentences made up of
