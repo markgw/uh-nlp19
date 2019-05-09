@@ -44,9 +44,11 @@ print(small_cfg.is_flexible_chomsky_normal_form())
    Write a CFG using the above format that produces
    these tree analyses for these two sentences.
    (The grammar does not yet need to be in CNF.)
+ * **Submit your CFG rules in text form**
 
-   **Submit your CFG rules in text form**
 
+
+## Exercise 2: Extending the grammar
 
 The NLTK CFG type has a method to check that
 all the words of the input sentence are covered
@@ -65,17 +67,13 @@ for s in sentences:
 ````
 
 
-## Exercise 2: Extending the grammar
+ * Add some more rules to your grammar so that it can
+   also generate the sentence:
 
-Add some more rules to your grammar so that it can
-also generate the sentence:
-
-*"the guild bought one ancillary company ."*
-
-Check that the new, extended grammar can be loaded
-and that it covers the new sentence as well as the old
-ones.
-
+   *"the guild bought one ancillary company ."*
+ * Check that the new, extended grammar can be loaded
+   and that it covers the new sentence as well as the old
+   ones.
  * **Submit the additional rules you needed to add**
 
 
@@ -106,10 +104,11 @@ B2 -> B C
 ````
 where `B2` is a new non-terminal.
 
-Convert your grammar above into "flexible" CNF
-(i.e. CNF, but allowing unary rules), load it and
-verify that it's correct using
-`cfg.is_flexible_chomsky_normal_form()`.
+ * Convert your grammar above into "flexible" CNF
+   (i.e. CNF, but allowing unary rules), load it and
+   verify that it's correct using
+   `cfg.is_flexible_chomsky_normal_form()`.
+ * **Submit the full grammar in text form.**
 
 
 
@@ -142,8 +141,7 @@ parse result graphically.)
  * Do any of these capture "real" ambiguity
    that distinguishes different interpretations of the
    sentence?
-
-   **Submit your answers**
+ * **Submit your answers**
 
 
 
@@ -153,7 +151,7 @@ parse result graphically.)
 # Section 2: Treebank parser
 
 
-## Exercise 5
+## Exercise 5: Treebank grammar
 
 NLTK provides easy access to a 10% sample of the Penn
 Treebank. The full treebank is not available without a
@@ -189,5 +187,62 @@ sentences.
    for each sentence?
  * What problems do you see with this parsing
    process?
+ * **Submit your answers to these questions**
 
-   **Submit your answers to these questions**
+
+
+## Exercise 6
+
+You will have noticed that your treebank parser produced
+a huge number of parse trees for even very short sentences.
+Most of these are highly implausible, resulting either from
+*overgeneration* by the grammar or from a high level of *local
+ambiguity* that could be reasonably well ruled out once the
+rest of the sentence is taken into account.
+
+In practice, exhaustive parsing of long sentences becomes
+completely impractical.
+
+We will now use the treebank to create a PCFG, learning
+the grammar from the corpus, as above, and estimating the
+probabilities associated with productions from the same data.
+
+Begin by collecting counts of the many expansions of an `S`
+non-terminal and using these to estimate a probability
+distribution for `S -> ?` rules.
+
+ * Show the counts from which you estimate the probabilities
+   and the probabilities of the expansions.
+ * Exclude from
+   your output any expansions that only occur fewer than 5
+   times. (But don't exclude them from the probability
+   calculations.)
+ * **Submit the list of productions with probabilities
+   and the counts needed to estimate them.**
+
+
+
+# Exercise 7
+
+Now we'll try parsing some data that wasn't in the training
+corpus. Your parser can only process sentences made up of
+words it has seen before, since it has no mechanism for
+guessing what rules to use for unseen words. It will for
+the same reason struggle to handle grammatical constructions
+that differ from those in the training corpus.
+
+Try feeding some sentences into the PCFG parser, as in ex 5,
+to see if you can find any full parses.
+You could try coming up with sentences yourself, or taking
+them from some other source, like news articles.
+
+They will need to be tokenized
+in the same style as the Penn Treebank. You can either do that
+manually or use NLTK's `TreebankWordTokenizer`, which
+produces PTB-style tokenization.
+
+ * Did you find any parsable sentences?
+ * How might you extend your parser to increase its coverage, so
+   that it can parse more sentences?
+ * **Submit any parsable sentences you managed to find
+   and a short description of your ideas to extend coverage**
