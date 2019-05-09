@@ -1,6 +1,8 @@
 Day 4: Syntax and Parsing
 =========================
 
+* TOC {:toc}
+
 # Section 1: CFGs with NLTK
 
 ## Exercise 1: Basic CFG use
@@ -180,9 +182,9 @@ Use your grammar as you did in  to parse the following
 sentences.
 
 ````
-*Mr. Vinken is chairman .*
-*Stocks rose .*
-*Alan introduced a plan .*
+Mr. Vinken is chairman .
+Stocks rose .
+Alan introduced a plan .
 ````
 
  * How many parse trees does the parser find
