@@ -1,7 +1,8 @@
 Day 4: Syntax and Parsing
 =========================
 
-* TOC {:toc}
+* TOC
+{:toc}
 
 # Section 1: CFGs with NLTK
 
