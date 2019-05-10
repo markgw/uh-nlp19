@@ -1,5 +1,10 @@
 # Day 4: Syntax and Parsing
 
+Carry out all the exercises below and submit your answers
+[on Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-4).
+Also submit a single Python file containing your full
+implementation.
+
 
 ## Section 1: CFGs with NLTK
 
@@ -127,7 +132,13 @@ The results are tree structures.
 
 If your grammar is correct, you should get at least
 one full parse for each of the example sentences in
-exercises 1 and 2.
+exercises 1 and 2, repeated here:
+
+````
+the purchase price includes two ancillary companies .
+the guild began a strike against the TV and movie industry in March 1988 .
+the guild bought one ancillary company .
+````
 
 Confirm that the trees produced by the parser match
 the two example trees (with the exception of the
