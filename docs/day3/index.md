@@ -51,7 +51,7 @@ Compute both of these distributions.
     using MLE.
  * Submit the computed *p(t[i+1] = DT | t[i] = VB)* - the probability
     of a verb being followed by a determiner.
- * Submit the computed *p(w[i] = 'feel' | t[i] = VB)*.
+ * **Submit the computed *p(w[i] = 'feel' &#124; t[i] = VB)*.**
 
 
 
@@ -68,7 +68,9 @@ all probabilities for an HMM POS tagger from the MASC corpus.
 
 Your HMM can now be used to tag new sentences:
 ````python
-tagged_sent = hmm.tag(["The", "answer", "is", "blowing", "in", "the", "wind", "."])
+tagged_sent = hmm.tag(
+    ["The", "answer", "is", "blowing", "in", "the", "wind", "."]
+)
 ````
 
 > The POS tag set used by this corpus is the same as the Penn Treebank.
