@@ -146,13 +146,15 @@ NLTK's training to ensure that the unsupervised model is expanded to
 cover words unseen in the labelled data. (This is a form of
 **semi-supervised** learning.)
 
- * Train an HMM using the previous labelled data as well as the new raw data.
- * Try tagging the earlier example sentences with the new model.
- * Also try tagging some new sentences from later in *Radio Planet*:
-   ````
-   Yesterday these fiends operated upon Doggo .
-   For a time, his own soul and this brain - maggot struggled for supremacy .
-   ````
+Train an HMM using the previous labelled data as well as the new raw data.
+Try tagging the earlier example sentences with the new model.
+
+Also try tagging some new sentences from later in *Radio Planet*:
+````
+Yesterday these fiends operated upon Doggo .
+For a time, his own soul and this brain - maggot struggled for supremacy .
+````
+
  * Has the unlabelled data improved the tagger?
  * What could you do to (further) improve the tagger's performance on
    different domains?
