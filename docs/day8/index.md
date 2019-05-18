@@ -218,7 +218,7 @@ Most probably you would need to modify a function called `update_scores`.
 
 Now you have three annotators and two scorers. Lets test them on unseen data.
 
-* Download and unpack development set [test.zip](test.zip), process it with all your annotators and both scorers.
+* Download and unpack test set [test.zip](test.zip), process it with all your annotators and both scorers.
 
 * Make a table, that would contain all your results on the test set. Give it a thought and try to make the table comprehensible for a reader.
 
@@ -232,3 +232,8 @@ Now you have three annotators and two scorers. Lets test them on unseen data.
 
 * **Submit the result table and your answers**
 * **Attach scorer outputs**
+
+
+## Acknoledgements
+
+The data used in this assignment are taken from [TempEval-3 Temporal Annotation Shared Task](https://www.cs.york.ac.uk/semeval-2013/task1/index.html). The shared task used much mpre elaborated annotation schema and consisted of several sub-tasks. More details on the tasks and the results can be found in the [organizers' paper](https://www.aclweb.org/anthology/S13-2001).
