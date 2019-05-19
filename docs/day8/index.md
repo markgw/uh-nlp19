@@ -1,14 +1,20 @@
 # Day 8: Temporal Information Extraction
 
+Carry out all the exercises below and submit your answers
+[on Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-4).
+Also submit a single Python file containing your full
+implementation.
+
+----
+
 Temporal Information Extraction is finding temporal expressions in a natural language text. "Monday", "last summer", "next year", "May 29, 2019", "today" are all examples of temporal expressions.
 
 ## Exercise 1: Temporal IE with regural expressions
 
-This is an example code that uses a regular expressions to find temporal expressions in the given sentences.
+This is an example code that uses a regular expression to find temporal expressions in the given sentences.
 
 ````python
-
-import re 
+import re
 
 sentences = [
 "Waxman Industries Inc. said holders of $6,542,000 face amount of its 6 1/4% convertible subordinated debentures, due March 15, 2007, have elected to convert the debt into about 683,000 common shares.",
@@ -16,27 +22,25 @@ sentences = [
 "Many of the local religious leaders who led the 1992 protests have moved."
 ]
 
-
-months = '(January|February|March|April|May|June|July|August|September|Octrober|November|December)'
-timex = '((%s\s+)?(\d{1,2},?\s+)?\d{4})' %months
+months = '(January|February|March|April|May|June|July|August|September|October|November|December)'
+timex = r'((%s\s+)?(\d{1,2},?\s+)?\d{4})' % months
 
 for s in sentences:
     print (re.sub(timex, r'<TIMEX>\1</TIMEX>', s))
-
 ````
 
-Output is the same sentences with temporal expressions are marked up with <TIMEX> tag:
-
+The output is the same sentences with temporal expressions marked up with `<TIMEX>` tag:
 ````
 Waxman Industries Inc. said holders of $6,542,000 face amount of its 6 1/4% convertible subordinated debentures, due <TIMEX>March 15, 2007</TIMEX>, have elected to convert the debt into about 683,000 common shares.
 Seventy-five million copies of the rifle have been built since it entered production in <TIMEX>February 1947</TIMEX>, making it history's most widely distributed weapon.
 Many of the local religious leaders who led the <TIMEX>1992</TIMEX> protests have moved.
 ````
 
+
 ### Exercise 1.1
 
 * Write regular expressions that would capture temporal expressions in
-the following sentences. 
+the following sentences.
 
 ````
 The company said it expects to release third-quarter results in mid-November.
@@ -50,7 +54,6 @@ Ogden Projects, whose shares began trading on the New York Stock Exchange in Aug
 A spokeswoman for Crum amp Forster said employees were told early this week that numerous staff functions for the personal insurance lines were going to be centralized as a cost-cutting move.
 
 For the quarter ended Sept. 30, Delta posted net income of $133.1 million, or $2.53 a share, up from $100 million, or $2.03 a share, a year earlier.
-
 ````
 
 This is an output that should be produced:
@@ -67,11 +70,10 @@ Ogden Projects, whose shares began trading on the New York Stock Exchange in <TI
 A spokeswoman for Crum amp Forster said employees were told <TIMEX>early this week</TIMEX> that numerous staff functions for the personal insurance lines were going to be centralized as a cost-cutting move.
 
 For <TIMEX>the quarter</TIMEX> ended <TIMEX>Sept. 30</TIMEX>, Delta posted net income of $133.1 million, or $2.53 a share, up from $100 million, or $2.03 a share, <TIMEX>a year earlier</TIMEX>.
-
 ````
 
 Try to make your regular expressions as general as possible, so that
-they would capture not only given examples but also other possible
+they would capture not only given examples but also some other possible
 temporal expressions.
 
 ### Exercise 1.2
@@ -84,7 +86,7 @@ annotated with temporal expression.
 
 * Write a program, that processes `raw` documents one by one,
   annotates temporal expressions in each of them (using regular
-  expressions made on the previous step) and prints output into a new
+  expressions made on the previous step) and output the result into a new
   folder.
 
 Use regular expressions made in Exercise 1.1. The documents in
@@ -96,7 +98,7 @@ same document number as in `raw` folder.
 The scorer takes three parameters: path to the gold annotations folder, path to the system output folder and (optional) name of the output. E.g.:
 
 ````bash
-python train/ann/ train/sub/ train.txt 
+python train/ann/ train/sub/ train.txt
 ````
 
 The scorer outputs the evaluation measures---recall, precision and
@@ -109,7 +111,7 @@ Repeat that process until you are satisfied with the scores.
 
 * Download and unpack development set [dev.zip](dev.zip), run your code and the scorer.
 
-* **Submit evaluations measures for the training and development sets**
+* **Submit evaluation measures for the training and development sets**
 * **Attach your code and the scorer outputs**
 
 
@@ -170,7 +172,7 @@ Now you have two time-expression annotators: regex-based and spaCy-based, and tw
 
 Compare scorer outputs obtained on development set. Try to find cases correctly processed by one annotator but missed by another.
 
-* What is the main strength of the regex annotator? What is its main weakness? 
+* What is the main strength of the regex annotator? What is its main weakness?
 * What is the main strength of the spaCy annotator? What is its main weakness?
 Add some examples to justify your response.
 
@@ -179,7 +181,7 @@ Add some examples to justify your response.
 
 ## Exercise 4: The best ever temporal expression annotator
 
-Now, when you know what are the main strengths and weaknesses of both annotators, try to find a method that would combine advantages of both. 
+Now, when you know what are the main strengths and weaknesses of both annotators, try to find a method that would combine advantages of both.
 
 * Implement the third annotator, using either regular expressions, or spaCy patterns, or both.
 You may try any other technology but try to reuse your code made for Exercises 1 and 2.
