@@ -42,7 +42,7 @@ if __name__ == "__main__":
 	"Many of the local religious leaders who led the 1992 protests have moved."
 	]
 	
-	month_regex = '(January|February|March|April|May|June|July|August|September|Octrober|November|December)'
+	month_regex = r'(January|February|March|April|May|June|July|August|September|October|November|December)'
 	month = {"TEXT": {"REGEX": month_regex}}
 	year = {"SHAPE": "dddd", "<=":"2019"}
 	day = {"SHAPE": "dd", ">":"0", "<=":"31"}
