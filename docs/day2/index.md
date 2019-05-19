@@ -179,4 +179,4 @@ Using the given code snippets, implement `make_punny(text)`. Feel free to add an
 
 
 * What are the punny alternatives for "Jurassic Park" and "Life of Pi" produced by your method. Choose two custom movie titles and report the output of your method.
-* **Submit your answers as text**
+* **Submit your answers**
