@@ -22,6 +22,7 @@ Here are the suggestions we have for systems you might build. Further
 down the page, you'll find instructions, tips, ideas, etc. for each.
 
  * Temporal information extraction system
+ * *More to come!*
 
 
 ## Instructions
