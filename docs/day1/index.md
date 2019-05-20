@@ -5,6 +5,7 @@ Each day, your task is to work through
 all the exercises on the page and submit your answers
 to each exercise described like this:
  * **Submit yada yada**
+
 [on Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-4).
 (Today is slightly different, see below.)
 Also submit a single Python file containing your full
