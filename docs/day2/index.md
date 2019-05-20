@@ -1,5 +1,4 @@
 # Day 2: NLU Pipeline and Toolkits
-================================
 
 Carry out all the exercises below and submit your answers
 [on Moodle](https://moodle.helsinki.fi/mod/assign/view.php?id=1593564).
@@ -77,7 +76,6 @@ Sample code to iterate over detected named entities:
 ````python
 for ent in doc.ents: # for iterating over detected entities
   print(ent.text, ent.start_char, ent.end_char, ent.label_)
-
 ````
 
 Sample code to iterate over noun chunks:
@@ -94,7 +92,7 @@ for chunk in doc.noun_chunks: # for iterating over noun chunks
 * **Submit your answers**
 
 
-For additional readings regarding spaCy (optional):
+For additional reading regarding spaCy (optional):
 * [An interactive course for using spaCy](https://course.spacy.io/)
 * [A brief comparison between spaCy and other NLP tools.](https://spacy.io/usage/facts-figures)
 
@@ -114,7 +112,7 @@ Try parsing the text given in the first exercise using the tools. Compare the re
 * **Submit your answers**
 
 #### Other NLP tools (Optional)
-In case you'd like to try out other NLP tools, here are more NLP tools:
+In case you'd like to try out other NLP tools, here are some more:
 
 * [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) *(Implemented in Java, follow this tutorial to use [Stanford CoreNLP from Python](https://www.khalidalnajjar.com/setup-use-stanford-corenlp-server-python/))*
 * [AllenNLP](https://allennlp.org/tutorials)
