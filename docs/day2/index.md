@@ -96,7 +96,7 @@ for chunk in doc.noun_chunks: # for iterating over noun chunks
 
 For additional readings regarding spaCy (optional):
 * [An interactive course for using spaCy](https://course.spacy.io/)
-* [a brief comparison between spaCy and other NLP tools.](https://spacy.io/usage/facts-figures)
+* [A brief comparison between spaCy and other NLP tools.](https://spacy.io/usage/facts-figures)
 
 
 ### Exercise 1.3: Comparing different NLP tools
@@ -120,15 +120,15 @@ In case you'd like to try out other NLP tools, here are more NLP tools:
 * [AllenNLP](https://allennlp.org/tutorials)
 * [Pattern](https://www.clips.uantwerpen.be/pages/pattern-en) (use `pip install pattern3` for *Python 3*)
 * [MaltParser](http://www.maltparser.org/)  (*Implemented in Java*)
+* [UralicNLP](https://github.com/mikahama/uralicNLP) (for processing Finnish and other Uralic languages)
 * Others?
-
 
 
 ## Exercise 2: Pun generation
 The goal of this exercise is to develop a simple application for generating food related puns. To do so, you will implement a method that accepts a simple expression as input, replaces a word in it with a new (punny) word and returns the new expression. You are expected to use spaCy and NLTK for this exercise.
 
 
-To get food-related words, we will query (Thesaurus Rex)[http://ngrams.ucd.ie/therex3/]. Thesaurus Rex mines categorical relations and adjectival modifiers from the web. To query and use Thesaurus Rex's API, install the following packages:
+To get food-related words, we will query [Thesaurus Rex](http://ngrams.ucd.ie/therex3). Thesaurus Rex mines categorical relations and adjectival modifiers from the web. To query and use Thesaurus Rex's API, install the following packages:
 
 
 ````sh
@@ -179,4 +179,4 @@ Using the given code snippets, implement `make_punny(text)`. Feel free to add an
 
 
 * What are the punny alternatives for "Jurassic Park" and "Life of Pi" produced by your method. Choose two custom movie titles and report the output of your method.
-* **Submit your answers as text**
+* **Submit your answers**
