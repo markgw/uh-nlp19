@@ -11,7 +11,7 @@ Today we continue working on the Temporal Information Exctraction problem, which
 Now try to find a method that would combine advantages of both annotators.
 
 
-## Exercise 4: The best ever temporal expression annotator
+## Exercise 1: The best ever temporal expression annotator
 
 * Implement the third annotator, which would combine advantages of both annotators, using either regular expressions, or spaCy patterns, or both.
 
@@ -30,7 +30,7 @@ Does it perform better than the other two? If not, try to identify the problem a
 * **Attach your code and the scorer outputs**
 
 
-## Exercises 5: Scorer
+## Exercises 2: Scorer
 
 By that point you have seen a number of the scorer outputs.
 
@@ -47,7 +47,7 @@ Most probably you would need to modify a function called `update_scores`.
 * **Attach your code and the scorer outputs**
 
 
-## Exercises 6: Results and discussion
+## Exercises 3: Results and discussion
 
 Now you have three annotators and two scorers. Lets test them on unseen data.
 
