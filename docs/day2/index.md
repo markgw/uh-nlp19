@@ -71,7 +71,7 @@ for sent in doc.sents:
   print()
 ````
 
-When analyzing sentences, spaCy automatically runs the text throw an NLP pipeline (tokenizer, tagger, parser and so on). Read and try out the code snippets in [this article](https://spacy.io/usage/spacy-101) and [this](https://spacy.io/usage/linguistic-features) to familiarize yourself with spaCy (tokenization, POS tagging, lemmatization, dependency parsing, noun phrase chunking and named entity recognition, at least).
+When analyzing sentences, spaCy automatically runs the text throw an NLP pipeline (tokenizer, tagger, parser and so on). Read and try out the code snippets in [this article](https://spacy.io/usage/spacy-101) (until "Word vectors and similarity") and [this](https://spacy.io/usage/linguistic-features) (until "Tokenizer data") to familiarize yourself with spaCy (mainly: tokenization, POS tagging, lemmatization, dependency parsing, noun phrase chunking and named entity recognition).
 
 Sample code to iterate over detected named entities:
 ````python
@@ -108,9 +108,9 @@ The goal of this exercise is to experiment with different NLP tools, know what t
 * Stanford CoreNLP (Using [https://corenlp.run/](https://corenlp.run/))
 
 
-Try parsing the text given in the first exercise using the tools. Come up with two other sentences containing some ambiguity, entities and/or noun chunks and try processing them using the tools.
+Try parsing the text given in the first exercise using the tools. Compare the results by the tools. Now, parse the sentence "The quick brown fox jumps over the lazy dog" and compare the output. Try out a simple sentence (e.g. "I have a dog.").
 
-* From your observations, any differences between the functionalities and results of NLTK, spaCy and CoreNLP? Briefly discuss and provide the sentences you have tried.
+* From your observations, any differences between the results (e.g. parsed trees, POS tags, ... etc) of NLTK, spaCy and CoreNLP? Briefly discuss.
 * **Submit your answers**
 
 #### Other NLP tools (Optional)
@@ -156,7 +156,7 @@ def food_words(file_path='./food_words.pkl'):
   return result_dict
 ````
 
-Now that you have access to food-related words, implement a function `make_punny(text)` that processes the input `text`, selects a token that is either a verb or noun at random, replaces it with a similar sounding food-related word from `food_words()`. To measure the pronunciation similarity between words, we will employ the *CMU Pronouncing Dictionary* provided in NLTK and Levenshtein edit distance.
+Now that you have access to food-related words, implement a function `make_punny(text)` that processes the input `text`, selects a token that is either a verb or noun at random, replaces it with a similar sounding food-related word from `food_words()`. You can implement the function to return more than one punny variation (5 at most). To measure the pronunciation similarity between words, we will employ the *CMU Pronouncing Dictionary* provided in NLTK and Levenshtein edit distance.
 
 The below code loads the CMU dictionary and returns the pronunciation of a word. In case the module did not exist, run `nltk.download('cmudict')`.
 
@@ -174,9 +174,8 @@ import editdistance
 distance = editdistance.eval(pronounce('pi'), pronounce('pie')) # 0 == identical pronunciation
 ````
 
+Using the given code snippets, implement `make_punny(text)`. Feel free to add any custom improvements/measures to enhance the quality of puns (e.g. considering multiple punny words and presenting them to user, using the weights provided by Thesaurus Rex, ... etc).
 
-Using the given code snippets, implement `make_punny(text)`. Feel free to add any custom improvements/measures to improve the quality of puns (e.g. considering multiple punny words and presenting them to user, using the weights provided by Thesaurus Rex, ... etc).
 
-
-* What are the punny alternatives for "Jurassic Park" and "Life of Pi" produced by your method. Choose two custom movie titles and report the output of your method.
+* What are the punny expressions for "Jurassic Park" and "Life of Pi" produced by your method. Choose two custom movie titles and report the output of your method.
 * **Submit your answers**
