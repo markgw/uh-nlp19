@@ -277,8 +277,8 @@ False
 
 You can also check whether two objects are indetical using `is` and `is not`:
 ```python
->>> list = [1, 2]
->>> other_list = [1, 2]
+>>> a = [1, 2]
+>>> b = [1, 2]
 >>> a == b  # "equal": same list contents in same order
 True
 >>> a is b  # "identical": exact same object
@@ -294,7 +294,7 @@ The basic Python types are `int` for integers, `float` for floating point number
 >>> x = 1
 >>> type(x)  # A number without a decimal is an integer
 <class 'int'>
->>> 2 * 200  # Integers won't overflow. They will just take increasing amounts of memory and will be more costly to operate upon.
+>>> 2 ** 200  # Integers won't overflow. They will just take increasing amounts of memory and will be more costly to operate upon.
 1606938044258990275541962092341162602522202993782792835301376
 >>> 5 / 2  # Default division casts to float
 2.5
