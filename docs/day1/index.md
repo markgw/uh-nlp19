@@ -1,6 +1,17 @@
 Day 1: Introduction to NLP
 ==========================
 
+Each day, your task is to work through
+all the exercises on the page and submit your answers
+to each exercise described like this:
+ * **Submit yada yada**
+[on Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-4).
+(Today is slightly different, see below.)
+Also submit a single Python file containing your full
+implementation.
+
+----
+
 This day is a short introduction to the Python 3 programming language. We assume a good general knowledge of the Java programming language, on the level of Introduction to Programming (Ohjelmoinnin perusteet) and Advanced Programming (Ohjelmoinnin jatkokurssi) as taught at the department. For those who are already familiar with Python, this day serves as a refresher.
 
 **Even if you are very familiar with Python, you should read through the section "Installing stuff, NLTK and the only marked assignment", since this section contains the only marked assignment of the first day**. At the same time, skimming through the document might be useful even if you've used Python before.
@@ -23,7 +34,7 @@ There are a few different ways to run Python code, the simplest of which is usin
 > **Exercise:**
 > Start your Python REPL by typing `python3` in the terminal. Then type in `import this`, press enter and read the Zen of Python which describes "good Python" in a poetic format. You can quit the REPL by either typing `quit()` or pressing Ctrl-D.
 
-The second way of running Python is by writing Python into a file and running the file through the intepreter. 
+The second way of running Python is by writing Python into a file and running the file through the intepreter.
 
 > **Exercise:**
 > Create a new file named `zen.py`, write the `import this` statement into it and save it. Run the file in the terminal via `python3 zen.py` and verify the input matches your expectations.
@@ -35,7 +46,7 @@ The statement `import this` above is a special case. Normally to output from a .
 > ```python
 > "this is a string outside of print()"
 > print("this is a string inside a print()")
-> ``` 
+> ```
 > Did the output match your expectations? Determine what happens when you run the same two lines in the REPL.
 
 More experience Python users, especially in the scientific community, often write in Python "notebooks". These are something of a middle-ground between the two previous methods, also allowing the author to embed markdown and LaTeX math. Notebooks, however, have several non-obvious "footguns" that are likely to bite even experienced developers now and then. This is not to say that Notebooks are *bad*, merely that they are not a silver bullet. I suggest that you, especially if you are beginner, work with the REPL and a standard editor like VSCode instead of using notebooks for now. If you are interested to learn more about the footguns in notebooks, see Joel Grus' talk ["I don't like notebooks"](https://www.youtube.com/watch?v=7jiPeIFXb6U) after working through the rest of these assignments.
@@ -52,8 +63,8 @@ There is no multiline comment, but multiline strings can be sometimes used for t
 ```python
 def double(number)
     """
-    This is a method that doubles the argument. 
-    
+    This is a method that doubles the argument.
+
     This text here
     is really a multiline string that just isn't assigned to any
     variable or used in any other way. Strings like this at the
@@ -108,7 +119,7 @@ the equivalent Python snippet
 for i in some_list:
 print(i)
 ```
-would crash with an `IndentationError`. 
+would crash with an `IndentationError`.
 
 This enforcement of indentation also allows Python to get rid of the braces used in Java. The correct way to implement the above Python snippet is as
 ```python
@@ -209,7 +220,7 @@ The methods/members that start with two underscores are "magic methods" that def
 
 Math is largely the same as with Java. The most notable difference is in that integers are automatically translated to floats as needed. This is mostly relevant for division. Whereas in Java `1 / 2` is zero (`0.5` rounded down), in Python it is `0.5`. To get the same result as Java's integer division produces, you'll need to use the `1 // 2` operator.
 
-Exponentiation is done as `a ** b`. 
+Exponentiation is done as `a ** b`.
 
 There is no `++` operator, but you can combine assignment with the arithmetical operations for the same effect: `a += 1` is the same as `a = a + 1`. The `+` can be substituted with any other arithmetical operator, meaning `a %= 2` is the same as `a = a % 2`.
 
@@ -238,7 +249,7 @@ True
 True
 >>> (x < 10) or (x > 100)
 True
-``` 
+```
 
 ## Lists, Indentity and Membership
 
@@ -296,7 +307,7 @@ The basic Python types are `int` for integers, `float` for floating point number
 >>> x = 5e-6  # You can also use the exponential notation
 >>> 0.1 + 0.2 == 0.3 # Floats suffer from precision issues, just like in Java
 False
->>> 0.1 + 0.2  # Floats can't represent all numbers. 
+>>> 0.1 + 0.2  # Floats can't represent all numbers.
 0.30000000000000004
 >>> 0.3  # Python does things to hide this from you
 0.3
@@ -499,7 +510,7 @@ TypeError: unhashable type: 'set'
 
 ### Empty collections, converting between collections.
 
-Notice how both the set and the dictionary use the `{}` delimiters. This means that the statement `x = {}` is ambiguous. 
+Notice how both the set and the dictionary use the `{}` delimiters. This means that the statement `x = {}` is ambiguous.
 
 > **Exercise:**
 > Use the `type()` method to determine what is created by calling `x = {}`
@@ -529,7 +540,7 @@ if a == 2:
 elif a > 2:
     print('a is bigger than 2')
 else:
-    print('a is less than 2') 
+    print('a is less than 2')
 ```
 
 ### For
@@ -617,7 +628,7 @@ Note how the methods do not have attached type information. This enables you to 
 ...     print(box_char * width)
 ...     print(box_char, content, box_char)
 ...     print(box_char * width)
-... 
+...
 >>> print_box('Hi!')
 #######
 # Hi! #
@@ -657,7 +668,7 @@ The `enumerate()` iterator allows us to iterate over both the indices and values
 >>> my_list = ['a', 'b', 'c']
 >>> for index, value in enumerate(my_list):
 ...     print(index, value)
-... 
+...
 0 a
 1 b
 2 c
@@ -676,7 +687,7 @@ The for loop just automatically unpacks the tuple for us, so that we don't have 
 ...     index = index_value_tuple[0]
 ...     value = index_value_tuple[1]
 ...     print(index, value)
-... 
+...
 0 a
 1 b
 2 c
@@ -688,7 +699,7 @@ The `zip` iterator iterates over multiple lists at once:
 >>> list_b = ['A', 'B', 'C']
 >>> for a, b in zip(list_a, list_b):
 ...     print(a, b)
-... 
+...
 a A
 b B
 c C
@@ -742,7 +753,7 @@ Standard function syntax can also be used to produce more complex generators. Th
 ...     while True:
 ...         yield a
 ...         a, b  = b, a + b
-... 
+...
 >>> fibo = fibonacci()
 >>> next(fibo)
 0
@@ -760,7 +771,7 @@ Standard function syntax can also be used to produce more complex generators. Th
 8
 ```
 
-To produce values, the code in the generator is ran until a `yield` statement is encountered. The yielded value is then returned to the caller. When the next value is requested, the generator continues from where it stopped (with the same state) and runs until it hits `yield` again. Notice how we used the `while True` loop to ensure an infinite amount of fibonacci numbers. 
+To produce values, the code in the generator is ran until a `yield` statement is encountered. The yielded value is then returned to the caller. When the next value is requested, the generator continues from where it stopped (with the same state) and runs until it hits `yield` again. Notice how we used the `while True` loop to ensure an infinite amount of fibonacci numbers.
 
 ## Classes and objects
 
@@ -783,7 +794,7 @@ class Person:
 
     def __repr__(self):
         return "<Person: " + self.__str__() + ">"
-    
+
     def __eq__(self, other):
         if type(other) != Person:
             return false
@@ -819,7 +830,7 @@ Installing a huge number of dependencies globally is a bad idea for a multitude 
 In your shell, run the following command to set up a new virtual environment, replacing `<vent_path>` with some directory:
 ```shell
 $ python3 -m venv <venv_path>
-``` 
+```
 This part only needs to be ran once.
 
 Next, we want to activate the virtual environment.
@@ -828,10 +839,10 @@ $ source <venv_path>/bin/activate
 ```
 This command needs to be run again every time you start a new shell.
 
-You can now start a Python interpreter by tying in 
+You can now start a Python interpreter by tying in
 ```shell
 (venv) $ python
-``` 
+```
 
 Note how you no longer need to type in `python3`, as in the first example of this page.
 
@@ -848,11 +859,11 @@ The first line asks pip to upgrade itself. This does not need to be run every ti
 Open up the Python interpreter again, and run the command `import nltk`:
  ```shell
  (venv) $ python
-Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+Python 3.6.7 (default, Oct 22 2018, 11:32:17)
 [GCC 8.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import nltk
->>> 
+>>>
 ```
 This loads the nltk module. If you got an error message, something went wrong in a previous step.
 
@@ -889,7 +900,7 @@ Next up, let's take a close look at Kennedy's speech in 1961 by loading it up as
 >>> sents = nltk.corpus.inaugural.sents('1961-Kennedy.txt')
 ```
 
-Observe the data loaded into the variable `sents`. It should contain a list of lists. The inner lists are sentences, where each element of the list is a token like a word or punctuation. 
+Observe the data loaded into the variable `sents`. It should contain a list of lists. The inner lists are sentences, where each element of the list is a token like a word or punctuation.
 
 We can use the built-in `max` function to find the longest sentence:
 ```python
@@ -922,7 +933,7 @@ To wrap up, let's find the very longest sentence in the whole inaugural corpus a
 First, we'll use a list comprehension to iterate over the individual speeches. The comprehension will, for each speach, add to the list a tuple containing the file of the speech and the longest sentence:
 
 ```python
->>> longest_sents = [(speech, max(corpus.sents(speech), key=len)) for speech in corpus.fileids()] 
+>>> longest_sents = [(speech, max(corpus.sents(speech), key=len)) for speech in corpus.fileids()]
 >>> longest_sents[0]
 ('1789-Washington.txt', ['I', 'dwell', 'on', 'this', 'prospect', 'with', 'every', 'satisfaction', ...])
 ```
