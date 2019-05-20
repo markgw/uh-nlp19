@@ -8,8 +8,8 @@ to each exercise described like this:
 
 [on Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-4).
 (Today is slightly different, see below.)
-Also submit a single Python file containing your full
-implementation.
+On other days, you will also submit a single Python file containing your full
+implementation (but that's not necessary today).
 
 ----
 
