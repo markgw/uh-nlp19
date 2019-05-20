@@ -128,7 +128,7 @@ In case you'd like to try out other NLP tools, here are more NLP tools:
 The goal of this exercise is to develop a simple application for generating food related puns. To do so, you will implement a method that accepts a simple expression as input, replaces a word in it with a new (punny) word and returns the new expression. You are expected to use spaCy and NLTK for this exercise.
 
 
-To get food-related words, we will query [Thesaurus Rex](http://ngrams.ucd.ie/therex3). Thesaurus Rex mines categorical relations and adjectival modifiers from the web. To query and use Thesaurus Rex's API, install the following packages:
+To get food-related words, we will query [Thesaurus Rex](http://ngrams.ucd.ie/therex3). Thesaurus Rex mines categorical relations and adjectival modifiers of nouns from the web. To query and use Thesaurus Rex's API, install the following packages:
 
 
 ````sh
