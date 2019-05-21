@@ -120,7 +120,7 @@ The goal of this exercise is to experiment with different NLP tools, know what t
 
 * spaCy (Using the code above. Alternatively, you can use [https://explosion.ai/demos/displacy](https://explosion.ai/demos/displacy) to visualize the parsed dependencies. *Uncheck the merge options to see the full relations.*)
 * Stanford CoreNLP (Using [https://corenlp.run/](https://corenlp.run/))
-* (*optional*) NLTK, using the code you implemented. 
+* (*optional*) NLTK, using the code you implemented.
 
 
 Try parsing a simple sentence (e.g. "I have a dog.") using the tools. Now, parse the text given in the first exercise. Do the same for "Finger Lickin' Good.", "Finger licking good.", "Think Different." and "Think different.". Compare the results by the tools.
@@ -140,7 +140,7 @@ In case you'd like to try out other NLP tools, here are some more:
 
 
 ## Exercise 2: Pun generation
-The goal of this exercise is to develop a simple application for generating food related puns. To do so, you will implement a method that accepts a simple expression as input, replaces a word in it with a new (punny) word and returns the new expression. You are expected to use spaCy and NLTK for this exercise.
+The goal of this exercise is to develop a simple application for generating food related puns. To do so, you will implement a method that accepts a simple expression as input, replaces a word in it with a new (punny) word and returns the new expression. You are expected to use either spaCy or your `process_text` for this exercise, in addition to NLTK's CMU library.
 
 
 To get food-related words, we will query [Thesaurus Rex](http://ngrams.ucd.ie/therex3). Thesaurus Rex mines categorical relations and adjectival modifiers of nouns from the web. To query and use Thesaurus Rex's API, install the following packages:
