@@ -118,14 +118,14 @@ For additional reading regarding spaCy (optional):
 
 The goal of this exercise is to experiment with different NLP tools, know what they offer and compare them. The tools that you will use in this exercise are:
 
-* NLTK (Using the code you implemented.)
-* spaCy (Using the code above. Alternatively, you can use [https://explosion.ai/demos/displacy](https://explosion.ai/demos/displacy) to visualize the parsed dependencies. *Uncheck the merge options.*)
+* spaCy (Using the code above. Alternatively, you can use [https://explosion.ai/demos/displacy](https://explosion.ai/demos/displacy) to visualize the parsed dependencies. *Uncheck the merge options to see the full relations.*)
 * Stanford CoreNLP (Using [https://corenlp.run/](https://corenlp.run/))
+* (*optional*) NLTK, using the code you implemented. 
 
 
 Try parsing a simple sentence (e.g. "I have a dog.") using the tools. Now, parse the text given in the first exercise. Do the same for "Finger Lickin' Good.", "Finger licking good.", "Think Different." and "Think different.". Compare the results by the tools.
 
-* From your observations, any differences between the results (e.g. parsed trees, POS tags, ... etc) of NLTK, spaCy and CoreNLP? Briefly discuss the difference and any missing/correct/wrong results by the tools.
+* From your observations, any differences between the results (e.g. parsed trees, POS tags, ... etc) of spaCy and CoreNLP? Briefly discuss the difference and any missing/correct/wrong results by the tools.
 * **Submit your answers**
 
 #### Other NLP tools (Optional)
