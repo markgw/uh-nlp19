@@ -105,7 +105,7 @@ for chunk in doc.noun_chunks: # for iterating over noun chunks
 * What is dependency parsing and how is it different than POS tagging?
 * What is the difference between `token.pos_` and `token.tag_`?
 * What is noun phrase chunking?
-* What is named entity recognition? Describe two types of entities that spaCy can recognize.
+* What is named entity recognition? Describe any two types of entities that spaCy can recognize.
 * **Submit your answers**
 
 
@@ -119,7 +119,7 @@ For additional reading regarding spaCy (optional):
 The goal of this exercise is to experiment with different NLP tools, know what they offer and compare them. The tools that you will use in this exercise are:
 
 * NLTK (Using the code you implemented.)
-* spaCy (Using the code above. Additionally, you can use [https://explosion.ai/demos/displacy](https://explosion.ai/demos/displacy) to visualize the parsed dependencies.)
+* spaCy (Using the code above. Alternatively, you can use [https://explosion.ai/demos/displacy](https://explosion.ai/demos/displacy) to visualize the parsed dependencies. *Uncheck the merge options.*)
 * Stanford CoreNLP (Using [https://corenlp.run/](https://corenlp.run/))
 
 
