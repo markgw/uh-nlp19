@@ -50,7 +50,16 @@ print(stopWords)
 * What is POS tagging and why is it useful?
 * What is lemmatization and why is it useful?
 * What kind of words were in `stopWords`? What is the purpose of defining a set of such words?
-* Build your own NLP pipeline (a function named `process_text(text)`) that takes a paragraph as input, and splits the paragraph into sentences, applies word tokenization, POS tagging and lemmatization on all words. The function should return a list containing the processed sentences.
+* Build your own NLP pipeline (a function named `process_text(text)`) that takes a paragraph as input, and splits the paragraph into sentences, applies word tokenization, POS tagging and lemmatization on all words. The function should return a list containing the processed sentences. The format of the returned processed text could be something like this
+````python
+[ # sentences
+	[ # sentence 0, contains words
+		(word, lemma, POS, …), # word 0, in sentence 0
+    ...
+	],
+  ...
+]
+````
 * Implement a function (`filter_text(text)`) that uses `process_text(text)` to process a paragraph and then removes stop words and words that are not verbs, adjectives or nouns (for descriptions of POS tags, [read this](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html)).
 * **Submit your answers**
 
