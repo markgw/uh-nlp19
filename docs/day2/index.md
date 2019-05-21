@@ -12,6 +12,14 @@ In the previous session, you have installed NLTK and used it to load a corpus. I
 
 The following code imports the required NLTK modules for the task and calls the functions for tokenization, pos tagging and lemmatization. Run the code and answer the below questions.
 
+You might need to download the following NLTK packages:
+````python
+import nltk
+nltk.download('wordnet')
+nltk.download('stopwords')
+````
+
+
 ````python
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.tag import pos_tag
