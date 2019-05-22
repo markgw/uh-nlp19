@@ -89,7 +89,7 @@ Now, implement the following functions:
  * `random_tagger(tokens)`: given a list of tokens, assigns a POS tag randomly to each token. 
  (The tagset is defined in [ass5utils.py](ass5utils.py).) 
   
- * `majority_tagger(training_set, tokens)`: find the tag that is most common in the training set, 
+ * `majority_tagger(training_sents, tokens)`: find the tag that is most common in the training sentences, 
  and tag each token with this tag. 
 
 Compute the overall accuracy of both baselines, and compare the values with the HMM. 
