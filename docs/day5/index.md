@@ -4,9 +4,10 @@ Carry out all the exercises below
 and submit your answers on 
 [Moodle](https://moodle.helsinki.fi/course/view.php?id=33565#section-5). 
 Also submit a single Python file containing your full implementation.  
+
+
+## Exercise 1: Basics 
  
- 
-### Exercise 1.1: Basics 
 
 Consider an information retrieval system that returns a retrieval set of 15 documents (`retrieved`). 
 Each document in `retrieved` is labelled as *relevant* (`'R'`) or *non-relevant* (`'N'`):   
@@ -19,6 +20,9 @@ retrieved = ['R', 'N', 'N', 'R', 'R', 'N', 'N', 'N',
              'R', 'N', 'R', 'N', 'N', 'R', 'R']
 
 ````
+
+### Exercise 1.1 
+
 Continuing the snippet given above, compute the numbers of true positives, false positives, true negatives, and 
 false negatives. Then, compute the values of the following metrics (round the values to two decimal places): 
  
@@ -28,7 +32,7 @@ false negatives. Then, compute the values of the following metrics (round the va
 * Accuracy 
 * **Submit the values you computed for each metric**
 
-### Exercise 1.2: More on metrics
+### Exercise 1.2
 
 Consider the following scenario: a database consists of 10,000 documents in total, of which 10 are relevant.  
 * Is accuracy an appropriate metric for this scenario? Why/why not?
@@ -109,8 +113,7 @@ Again, use the `log_probability()` method of the HMM to compute the total log-pr
 * Compute the perplexity given the log-probability.
 * **Submit the perplexity value**
 
-
-### Exercise 3.1: Annotating text
+## Exercise 3: Text annotation
 
 Consider the following sentences from Penn Treebank corpus: 
 ````python
@@ -121,6 +124,9 @@ s2 = ['Despite', 'the', 'economic', 'slowdown', 'there', 'are', 'few', 'clear', 
 s3 =  ['The', 'real', 'battle', 'is', 'over', 'who', 'will', 'control', 'that', 'market', 'and', 'reap', 
 'its', 'huge', 'rewards']
 ````
+
+
+### Exercise 3.1
 
 Annotate the sentences with appropriate POS tags. 
 The tags are described [here](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).  
@@ -133,7 +139,7 @@ so simply make your best guess of the correct tag.)
 * **Submit your answer as text**
  
 
-### Exercise 3.2: Annotator agreement
+### Exercise 3.2 
 
 The corresponding gold-standard tags of the sentences are below: 
 
