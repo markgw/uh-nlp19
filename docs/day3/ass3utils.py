@@ -19,8 +19,8 @@ def train_unsupervised(labeled_sents, unlabeled_sents, max_iterations=3):
         [(word, None) for word in sent] for sent in unlabeled_sents
     ]
     print("Unsupervised training ({} sentences) for up to {} iterations".format(
-        len(unlabeled_sents)), max_iterations
-    )
+        len(unlabeled_sents), max_iterations
+    ))
     hmm = trainer.train_unsupervised(
         unlabeled_sents, model=hmm, max_iterations=max_iterations, verbose=True
     )
