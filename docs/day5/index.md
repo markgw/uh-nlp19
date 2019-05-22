@@ -14,7 +14,8 @@ Each document in `retrieved` is labelled as *relevant* (`'R'`) or *non-relevant*
 total_docs = 100
 total_relevant = 10
 
-retrieved = ['R', 'N', 'N', 'R', 'R', 'N', 'N', 'N', 'R', 'N', 'R', 'N', 'N', 'R', 'R']
+retrieved = ['R', 'N', 'N', 'R', 'R', 'N', 'N', 'N', 
+             'R', 'N', 'R', 'N', 'N', 'R', 'R']
 
 ````
 Continuing the snippet given above, compute the numbers of true positives, false positives, true negatives, and 
