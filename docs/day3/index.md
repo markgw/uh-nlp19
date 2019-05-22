@@ -157,7 +157,17 @@ Train an HMM using the previous labelled data as well as the new raw data.
 This could take a bit of time to run (for me it took 1-2m per iteration).
 The default number of iterations is 3, but, if you have time, you might
 like to try increasing this
-(using the `max_iterations` kwarg to `train_unsupervised()`)
+(using the `max_iterations` kwarg to `train_unsupervised()`).
+
+> Training this model could take up to 15m, depending on the parameters
+> you set and the computer you're running on. You will reuse it
+> in the following exercises.
+>
+> It's a good idea to store your trained model (returned by
+> `train_unsupervised()`) to a file using Python's
+> [`pickle` library](https://docs.python.org/3/library/pickle.html)
+> and then load it again on subsequent runs, so you don't have to
+> re-train it every time you run the later exercises.
 
 Try tagging the earlier example sentences with the new model.
 
