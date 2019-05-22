@@ -204,6 +204,11 @@ The model is similar to the Markov language model seen in the
 lecture, except that word probabilities are conditioned on (unknown,
 inferred) POS tags.
 
+> The `log_probability()` method expects a list of `(word, pos_tag)`
+> pairs as input. You don't have to specify the POS tag (it will
+> sum over all possible tags if not given), but you still have to
+> give it `(word, None)` pairs.
+
 Try using your models as LMs. Measure the log probability of some
 short sentences (perhaps including some of the examples above)
 using both of your HMMs.
