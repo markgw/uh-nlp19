@@ -53,8 +53,8 @@ Compute both of these distributions.
 
  * Collect these counts and estimate the distributions for `VB`
     using MLE.
- * Submit the computed *p(t[i+1] = DT | t[i] = VB)* - the probability
-    of a verb being followed by a determiner.
+ * **Submit the computed *p(t[i+1] = DT | t[i] = VB)* - the probability
+    of a verb being followed by a determiner.**
  * **Submit the computed *p(w[i] = 'feel' &#124; t[i] = VB)*.**
 
 
