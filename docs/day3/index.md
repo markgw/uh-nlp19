@@ -154,6 +154,11 @@ cover words unseen in the labelled data. (This is a form of
 **semi-supervised** learning.)
 
 Train an HMM using the previous labelled data as well as the new raw data.
+This could take a bit of time to run (for me it took 1-2m per iteration).
+The default number of iterations is 3, but, if you have time, you might
+like to try increasing this
+(using the `max_iterations` kwarg to `train_unsupervised()`)
+
 Try tagging the earlier example sentences with the new model.
 
 Also try tagging some new sentences from later in *Radio Planet*:
