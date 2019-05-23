@@ -113,8 +113,10 @@ Recall exercise 5 on Day 3, where you used the HMM as a language model.
 Again, use the `log_probability()` method of the HMM to compute the total log-probability of test tokens.
 (The input should be given as `(token, None)` pairs.)
 
-* Compute the perplexity given the log-probability.
-* **Submit the perplexity value**
+* Compute the perplexity given the log-probability. 
+* What does the perplexity of a language model describe? Explain shortly.
+* How could we find out whether the HMM language model is 'good'? Explain shortly
+* **Submit the perplexity value and explanations**
 
 ## Exercise 3: Text annotation
 
