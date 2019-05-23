@@ -84,9 +84,9 @@ That is, an entry `cm[correct_tag, predicted_tag]` is the number of times a toke
 tagged with `predicted_tag`.)
 
 * Which `(correct_tag, predicted_tag)` pair was the most common error? How many times did it occur? 
-**Submit tag pair and number of occurrences.**
-* What is the overall accuracy of the HMM tagger? **Submit the value.**
-  
+* What is the overall accuracy of the HMM tagger? 
+* Compute the precision, recall, and F-score (&beta; = 1) for tags `'NN'`and `'VB'`. 
+* **Submit the answers**
 
 ### Exercise 2.2: Comparison with baselines
 
@@ -113,7 +113,7 @@ Recall exercise 5 on Day 3, where you used the HMM as a language model.
 Again, use the `log_probability()` method of the HMM to compute the total log-probability of test tokens.
 (The input should be given as `(token, None)` pairs.)
 
-* Compute the perplexity given the log-probability. 
+* Compute the perplexity given the log-probability (round the value to one decimal place). 
 * What does the perplexity of a language model describe? Explain shortly.
 * How could we find out whether the HMM language model is 'good'? Explain shortly.
 * **Submit the perplexity value and explanations**
