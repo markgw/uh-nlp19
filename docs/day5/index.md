@@ -88,7 +88,7 @@ tagged with `predicted_tag`.)
 
 * Which `(correct_tag, predicted_tag)` pair was the most common error? How many times did it occur? 
 * What is the overall accuracy of the HMM tagger? 
-* Compute the precision, recall, and F1-score (&beta; = 1) for tags `'NN'`and `'VB'`. 
+* Compute the precision, recall, and F1-score (&beta; = 1) for the tag `'NN'`. 
 * **Submit the answers**
 
 
