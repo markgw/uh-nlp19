@@ -115,7 +115,7 @@ Again, use the `log_probability()` method of the HMM to compute the total log-pr
 
 * Compute the perplexity given the log-probability. 
 * What does the perplexity of a language model describe? Explain shortly.
-* How could we find out whether the HMM language model is 'good'? Explain shortly
+* How could we find out whether the HMM language model is 'good'? Explain shortly.
 * **Submit the perplexity value and explanations**
 
 ## Exercise 3: Text annotation
