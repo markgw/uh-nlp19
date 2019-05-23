@@ -170,7 +170,9 @@ license, but this sample is enough for us to build a
 treebank grammar from.
 
 Start by loading the treebank as follows and taking a
-look at a couple of its parse trees:
+look at a couple of its parse trees, which are instances
+of NLTK's [Tree](https://www.nltk.org/api/nltk.html#nltk.tree.Tree)
+class:
 
 ````python
 from nltk.corpus import treebank
@@ -194,6 +196,9 @@ productions in the grammars you created above. When you called
 [CFG](https://www.nltk.org/api/nltk.html#nltk.grammar.CFG) object,
 which contained `Nonterminal`s, `Production`s and strings defining
 the CFG (see lectures).
+
+The complete set of productions used in a parse tree is directly
+available through its `tree.productions()` method.
 
 Given a set of productions using these NLTK data structures,
 you can directly build a CFG as follows:
