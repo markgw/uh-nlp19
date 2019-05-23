@@ -43,7 +43,7 @@ print(small_cfg.is_flexible_chomsky_normal_form())
 
 ![Example tree 1](example_tree1.png "Example tree 1")
 
-![Example tree 2](example_tree1.png "Example tree 2")
+![Example tree 2](example_tree2.png "Example tree 2")
 
  * Look at the two example trees above, taken from the Penn Treebank.
    Write a CFG using the above format that produces
