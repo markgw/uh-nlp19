@@ -88,7 +88,7 @@ tagged with `predicted_tag`.)
 
 * Which `(correct_tag, predicted_tag)` pair was the most common error? How many times did it occur? 
 * What is the overall accuracy of the HMM tagger? 
-* Compute the precision, recall, and F-score (&beta; = 1) for tags `'NN'`and `'VB'`. 
+* Compute the precision, recall, and F1-score (&beta; = 1) for tags `'NN'`and `'VB'`. 
 * **Submit the answers**
 
 
@@ -97,7 +97,7 @@ tagged with `predicted_tag`.)
 We would like to know whether the HMM tagger is any good compared to naive baselines.
 
 Now, implement the following functions:
- * `random_tagger(tokens)`: given a list of tokens, assigns a POS tag randomly to each token.
+ * `random_tagger(tagset, tokens)`: given a list of tokens, assigns a POS tag randomly to each token.
  (The tagset is defined in [ass5utils.py](ass5utils.py).)
 
  * `majority_tagger(training_sents, tokens)`: find the tag that is most common in the training sentences,
@@ -106,7 +106,7 @@ Now, implement the following functions:
 Compute the overall accuracy of both baselines, and compare the values with the HMM.
 
 * Which baseline performs better?
-* What is the difference in accuracy between this baseline and the HMM? (Round the value to one decimal place.)   
+* What is the difference in accuracy between this baseline and the HMM? (Round the value to two decimal places.)   
 * **Submit the name of baseline and accuracy difference**
 
 
@@ -117,7 +117,7 @@ Recall exercise 5 on Day 3, where you used the HMM as a language model.
 Again, use the `log_probability()` method of the HMM to compute the total log-probability of test tokens.
 (The input should be given as `(token, None)` pairs.)
 
-* Compute the perplexity given the log-probability (round the value to one decimal place).
+* Compute the perplexity given the log-probability (round the value to two decimal places).
 * What does the perplexity of a language model describe? Explain shortly.
 * How could we find out whether the HMM language model is 'good'? Explain shortly.
 * **Submit the perplexity value and explanations**
