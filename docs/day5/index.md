@@ -87,8 +87,8 @@ That is, an entry `cm[correct_tag, predicted_tag]` is the number of times a toke
 tagged with `predicted_tag`.)
 
 * Which `(correct_tag, predicted_tag)` pair was the most common error? How many times did it occur? 
-* What is the overall accuracy of the HMM tagger? 
-* Compute the precision, recall, and F1-score (&beta; = 1) for the tag `'NN'`. 
+* What is the overall accuracy of the HMM tagger? (Round the value to two decimal places.)
+* Compute the precision, recall, and F1-score (&beta; = 1) for the tag `'NN'`. (Round the value to two decimal places.)
 * **Submit the answers**
 
 
