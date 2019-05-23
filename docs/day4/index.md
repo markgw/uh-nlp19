@@ -183,11 +183,32 @@ Or, graphically:
 ````python
 treebank.parsed_sents()[0].draw()
 ````
+The trees in the corpus are represented using NLTK's own data structures,
+including:
+ * [Nonterminal](https://www.nltk.org/api/nltk.html#nltk.grammar.Nonterminal): represents non-terminal nodes in the tree
+ * [Production](https://www.nltk.org/api/nltk.html#nltk.grammar.Production): represents productions/expansions of the form A->B C (etc.)
+
+The same data structures (classes) are used the represents NTs and
+productions in the grammars you created above. When you called
+`CFG.fromstring()`, the result was a
+[CFG](https://www.nltk.org/api/nltk.html#nltk.grammar.CFG) object,
+which contained `Nonterminal`s, `Production`s and strings defining
+the CFG (see lectures).
+
+Given a set of productions using these NLTK data structures,
+you can directly build a CFG as follows:
+````python
+cfg = nltk.CFG(nltk.Nonterminal("S"), productions)
+````
+
+This defines the `S` non-terminal as the start symbol of
+the grammar. The set of non-terminals and terminals will be all
+of those used in the list of productions.
 
 Build a treebank grammar from all the trees in this sample
 of the corpus.
 
-Use your grammar as you did in  to parse the following
+Use your grammar as you did in exercise 4 to parse the following
 sentences.
 
 ````
