@@ -34,8 +34,11 @@ false negatives. Then, compute the values of the following metrics (round the va
 
 ### Exercise 1.2
 
-Consider the following scenario: a database consists of 10,000 documents in total, of which 10 are relevant.  
-* Is accuracy an appropriate metric for this scenario? Why/why not?
+Consider the following scenario: a database consists of 10,000 documents in total, of which 10 are relevant.    
+
+* Is accuracy an appropriate metric for evaluating the performance of a retrieval system in this scenario? 
+Why/why not?
+
 * **Submit your answer** 
 
 
