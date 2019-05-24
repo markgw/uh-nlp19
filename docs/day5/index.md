@@ -106,7 +106,7 @@ Now, implement the following functions:
 Compute the overall accuracy of both baselines, and compare the values with the HMM.
 
 * Which baseline performs better?
-* What is the difference in accuracy between this baseline and the HMM? (Round the value to one decimal place.)   
+* What is the difference in accuracy (expressed in [percentage points](https://en.wikipedia.org/wiki/Percentage_point)) between this baseline and the HMM? (Round the value to one decimal place.)   
 * **Submit the name of baseline and accuracy difference**
 
 
