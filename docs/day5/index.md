@@ -37,8 +37,7 @@ false negatives. Then, compute the values of the following metrics (round the va
 Consider the following scenario: a database consists of 10,000 documents in total, of which 10 are relevant.    
 
 * Is accuracy an appropriate metric for evaluating the performance of a retrieval system in this scenario?
-Why/why not?
-
+Why/why not? Discuss shortly.
 * **Submit your answer**
 
 
@@ -76,7 +75,7 @@ hmm_tagger = HiddenMarkovModelTagger.train(training_sents)
 ### Exercise 2.1: Confusion matrix
 
 Use the HMM to predict the tags for `test_tokens`.
-(If you've forgotten how to do this, refer back to your code from day 2.)
+(If you've forgotten how to do this, refer back to your code from day 3.)
 
 Then, compute the confusion matrix between the predicted tags and `correct_tags`.  
 You can use the
@@ -88,8 +87,9 @@ That is, an entry `cm[correct_tag, predicted_tag]` is the number of times a toke
 tagged with `predicted_tag`.)
 
 * Which `(correct_tag, predicted_tag)` pair was the most common error? How many times did it occur?
-**Submit tag pair and number of occurrences.**
-* What is the overall accuracy of the HMM tagger? **Submit the value.**
+* What is the overall accuracy of the HMM tagger? (Round the value to two decimal places.)
+* Compute the precision, recall, and F1-score (&beta; = 1) for the tag `'NN'`. (Round the value to two decimal places.)
+* **Submit the answers**
 
 
 ### Exercise 2.2: Comparison with baselines
@@ -97,7 +97,7 @@ tagged with `predicted_tag`.)
 We would like to know whether the HMM tagger is any good compared to naive baselines.
 
 Now, implement the following functions:
- * `random_tagger(tokens)`: given a list of tokens, assigns a POS tag randomly to each token.
+ * `random_tagger(tagset, tokens)`: given a list of tokens, assigns a POS tag randomly to each token.
  (The tagset is defined in [ass5utils.py](ass5utils.py).)
 
  * `majority_tagger(training_sents, tokens)`: find the tag that is most common in the training sentences,
@@ -117,7 +117,7 @@ Recall exercise 5 on Day 3, where you used the HMM as a language model.
 Again, use the `log_probability()` method of the HMM to compute the total log-probability of test tokens.
 (The input should be given as `(token, None)` pairs.)
 
-* Compute the perplexity given the log-probability.
+* Compute the perplexity given the log-probability (round the value to two decimal places).
 * What does the perplexity of a language model describe? Explain shortly.
 * How could we find out whether the HMM language model is 'good'? Explain shortly.
 * **Submit the perplexity value and explanations**
