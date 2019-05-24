@@ -58,6 +58,8 @@ The following code splits the corpus of sentences into training and test sentenc
 and assigns test tokens and the correct tags into separate lists.
 
 Train the HMM with `training_sents`, as in exercise 2 of Day 3.
+Download [ass5utils.py](ass5utils.py) into the same directory as
+your source code.
 
 ````python
 from nltk.corpus import treebank
