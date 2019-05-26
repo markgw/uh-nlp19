@@ -7,9 +7,9 @@ Carry out all the exercises below and submit your answers on Moodle. Also submit
 Read the website of the [End-to-End NLG Challenge](http://www.macs.hw.ac.uk/InteractionLab/E2E/). Observe especially the MR format towards the top of the page, and the example natural language reference associated with it. Download the dataset from the website and open the file `devset.csv`.
 
 > **Submit to Moodle** your answer to the following questions:
-> 1) How difficult does the task appear to you?
-> 2) Observe the scores reported in the section "Basedline System". Are they meaningful in isolation?
-> 3) What are your thoughts on the variety of language in the references of the devset?
+> 1. How difficult does the task appear to you?
+> 2. Observe the scores reported in the section "Basedline System". Are they meaningful in isolation?
+> 3. What are your thoughts on the variety of language in the references of the devset?
 
 ## Exercise 2: Very simple NLG
 
@@ -40,9 +40,9 @@ Familiarize yourself with the `MeaningRepresentation` class in `ass6utils.py`, e
 Run the code a few times (5 or so) and observe the results. Note that the `score` method applies your NLG-method to the whole `devset` corpus, not just the ten random samples shown to you.
 
 > **Submit to Moodle** your answers to the following questions:
-> 1) What kinds of scores is this extremely simple system achieving
-> 2) How do they compare to the baseline results on the challenge's website?
-> 3) Do you observe any problems with the output (other than it being so short)?
+> 1. What kinds of scores is this extremely simple system achieving
+> 2. How do they compare to the baseline results on the challenge's website?
+> 3. Do you observe any problems with the output (other than it being so short)?
 
 ## Exercise 3: Less simple NLG
 
@@ -62,13 +62,13 @@ As an example, your output could look like "*The Golden Palace is a Chinese coff
 ## Exercise 5: Reflect on the complexity
 
 >**Submit to Moodle** your answers to the following questions. A few sentences each is sufficient.
-> 1) How difficult would it be to modify the system to produce a wider variety of sentences?
-> 2) Think of another language you speak. How much work would it be to translate the system to that language compared to this initial implementation?
-> 3) Using the Gatt & Krahmer classification (Refer to slides), how would you characterize the system you built?
-> 4) Think back on your answers to Exercise #1. Did the task turn out easier or more difficult than you anticipated?
-> 5) Think about the pros and cons of the neural systems as discussed in the lecture. Do you think this task is good for them (consider the data, the complexity etc.)? Do you expect them to fare better than "classical" systems?
-> 6) How do the Baseline scores (on the E2E website) compare to your scores? How did you compare to the other system reported in Table 3 of the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf)?
-> 7) Look at the same table. Check from the caption how the colors match the system architectures. How are the rule-based and template-based systems faring against the seq2seq and other data-driven systems? Does this match your expectation from before?
+> 1. How difficult would it be to modify the system to produce a wider variety of sentences?
+> 2. Think of another language you speak. How much work would it be to translate the system to that language compared to this initial implementation?
+> 3. Using the Gatt & Krahmer classification (Refer to slides), how would you characterize the system you built?
+> 4. Think back on your answers to Exercise #1. Did the task turn out easier or more difficult than you anticipated?
+> 5. Think about the pros and cons of the neural systems as discussed in the lecture. Do you think this task is good for them (consider the data, the complexity etc.)? Do you expect them to fare better than "classical" systems?
+> 6. How do the Baseline scores (on the E2E website) compare to your scores? How did you compare to the other system reported in Table 3 of the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf)?
+> 7. Look at the same table. Check from the caption how the colors match the system architectures. How are the rule-based and template-based systems faring against the seq2seq and other data-driven systems? Does this match your expectation from before?
 
 
 ## Exercise 6: Explore BLEU
@@ -82,7 +82,7 @@ Try out different modifications to the reference and calculate the BLEU scores b
 ## Exercise 7: Human Evaluation
 
 >**Submit to Moodle** your answers to the following questions. A few sentences each is sufficient.
-> 1) What kinds of questions would you ask if you were to conduct an intrinstic human evaluation on this task?
-> 2) Can you come up with an extrinsic human evaluation for this task?
-> 3) Read Section 4.2 from the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf). How did seq2seq systems compare to other interms of naturalness and quality?
-> 4) Do you think naturalness or quality (~correctness) is more important for a system describing (perhaps recommending) restaurants?
+> 1. What kinds of questions would you ask if you were to conduct an intrinstic human evaluation on this task?
+> 2. Can you come up with an extrinsic human evaluation for this task?
+> 3. Read Section 4.2 from the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf). How did seq2seq systems compare to other interms of naturalness and quality?
+> 4. Do you think naturalness or quality (~correctness) is more important for a system describing (perhaps recommending) restaurants?
