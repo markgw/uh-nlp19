@@ -79,7 +79,7 @@ As an example, your output could look like "*The Golden Palace is a Chinese coff
 
 Import the `bleu_single` method from `ass6utils.py`. Pick some NL realisation, either from those you generated or from the `devset.csv`. Call it the *reference*.
 
-Try out different modifications to the reference and calculate the BLEU scores between the original and the modified reference. Try to come up with a pair of modifications where candidate #1 has the same logical content (i.e. same information) as the reference and candidate #2 contains some falsehood, but the BLEU scores rank candidate #2 higher than candidate #1.
+Try out different modifications to the reference and calculate the BLEU scores (using `bleu_single`) between the original and the modified reference. Try to come up with a pair of modifications where candidate #1 has the same logical content (i.e. same information) as the reference and candidate #2 contains some falsehood, but the BLEU scores rank candidate #2 higher than candidate #1.
 
 >**Submit to Moodle** the reference and the candidates you found together with the BLEU scores. What does this tell you about the BLEU scores as a metric? What is the problem with the way we are using the BLEU score? Recall the assumptions behind these kinds of metrics from the slides.
 
