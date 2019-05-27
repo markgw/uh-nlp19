@@ -95,6 +95,8 @@ Normalize the count vectors by the document length and perform the same relevanc
 
 ### Exercise 2.2: Using TF-IDF to weight words
 
+In the previous exercise, our doc-term matrix is composed of count vectors where each element in the vector is the number of times a word appeared in the document.
+
 In this exercise, we will convert our doc-term matrix which is composed of count vectors to TF-IDF vectors.
 Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from Scikit-learn. This implements the TF-IDF calculations seen in lectures.
 
@@ -107,14 +109,15 @@ Perform the same relevance ranking that we did in Exercise 2 by getting the dot 
 
 ## Exercise 3: Finding similar documents
 
-Using the doc-term matrix from Exercise 3, compute cosine similarity for each document pair to find which two documents are most similar to each other.
+Using the doc-term matrix from Exercise 2.2, use cosine similarity for each document pair to find which two documents are most similar to each other.
+
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
 
  * Which document pair are most similar to each other?
  * How about the least similar?
  * Does it follow your intuition.
 
-Suppose you have a another three documents that you have not seen so far:
+Suppose you are given three new documents that you have not seen so far:
 
 ````python
 new_docs = ['Plane crash in Baden-Wuerttemberg',
@@ -143,7 +146,7 @@ def prepare_dataset(filename):
     return articles
 ````
 
-The most popular topic modelling method is LDA. The following lines trains a topic model for two topics using Gensim:
+The most popular topic modelling method is LDA. The following lines will train a topic model for two topics using Gensim:
 ````python
 from gensim.models import LdaModel
 from gensim import corpora
