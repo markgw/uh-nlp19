@@ -113,6 +113,13 @@ Perform the same relevance ranking that we did in Exercise 2 by getting the dot 
 Using the doc-term matrix from Exercise 2.2, use cosine similarity for each document pair to find which two documents are most similar to each other.
 
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
+````python
+import itertools
+doc_count = len(documents)
+doc_list = [i for i in range(doc_count)]
+doc_pairs = list(itertools.combinations(doc_list, 2))
+# doc_pairs contain tuples where each tuple is a pair of document index numbers
+```
 
  * Which document pair are most similar to each other?
  * How about the least similar?
@@ -189,4 +196,4 @@ for k in range(n_topics):
  * **Submit your answers**
 
 
-[^1]: This will be uploaded and linked to from here. If this message is still here, prod Mark or Elaine to update this document!
+[^1]: [de-news](docs/day7/de-news.txt)
