@@ -48,7 +48,18 @@ Run the code a few times (5 or so) and observe the results. Note that the `score
 
 ## Exercise 3: Less simple NLG
 
-Improve upon the system so that it can produce output that reflects all the fields available in the MeaningRepresentation. Focus on just getting all the fields realized: you can start by realizing each field as its own sentence.
+Improve upon the system so that it can produce output that reflects all the fields available in the MeaningRepresentation. Focus on just getting all the fields realized. You can start by realizing each field as its own sentence, building the output piece-by-piece like so:
+
+```python
+output = "<something>."
+if mr.family_friendly == "yes":
+    output += " X is family friendly."
+elif mr.family_friendly == "no":
+    output += " X is not family friendly.
+else:
+    # Say nothing about family friendliness
+    pass
+```
 
 Evaluate your improved generator using the `score` method as above
 > **Submit to Moodle** a few example sentences produced by your generator and the scoring it receives.
