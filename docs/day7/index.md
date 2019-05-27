@@ -86,7 +86,8 @@ to compute dot products.
 
 > If necessary, [remind yourself](https://mathinsight.org/matrix_vector_multiplication)
 > of what happens when you
-> take a dot product of a matrix and vector.
+> take a dot product of a matrix and vector. Looking
+> at the diagrams on the lecture slides might also help.
 
 Normalize the count vectors by the document length and perform the same relevance ranking.
 
