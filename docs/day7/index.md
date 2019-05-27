@@ -36,13 +36,12 @@ Construct the document-term matrix by going through each document and checking i
 
 ### Exercise 1.2: Using scikit-learn to build the doc-term matrix
 
-Scikit-learn actually has a method called the CountVectorizer to build document-term matrices easily and includes a number of options
+Scikit-learn actually has a method called the [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) to build document-term matrices easily and includes a number of options
 such as removing stopwords, tokenizing, indicationg encoding (important for documents in other languages), and others.
-For more information, go to this page: [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
 At the bottom of the page is a code snippet to build count vectors for each document. You can easily convert these to a binary doc-term matrix.
 
-How does your doc-term matrix from 1A compare to your doc-term matrix from 1B? Are they exactly the same or are their differences?
-If they are different, what could account for such difference?
+How does your doc-term matrix from 1.1 compare to your doc-term matrix from 1.2? Are they exactly the same or are their differences?
+If they are different, what could account for these differences?
 
 For the next exercises, we will make use the doc-term matrix with count vectors produced by the CountVectorizer.
 
@@ -51,7 +50,7 @@ For the next exercises, we will make use the doc-term matrix with count vectors 
 ### Exercise 2.1: Using the dot product to rank documents
 
 Suppose you have the query 'retail wages'. Rank the documents by relevance to this query by getting the dot product of the query by the doc-term matrix.
-Which document is the most relevant? Does it align with your intuition?
+Which document is the most relevant to the query? Does it align with your intuition?
 
 Normalize the count vectors by the document length and perform the same relevance ranking. Does it produce the same results?
 
@@ -59,17 +58,18 @@ Normalize the count vectors by the document length and perform the same relevanc
 
 In this exercise, we will convert our doc-term matrix which is composed of count vectors to TF-IDF vectors.
 Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from scikit-learn.
-Perform the same relevance ranking that we did in Exercise 2 by getting the dot product of the same query with your new TF-IDF doc-term matrix.
+Perform the same relevance ranking that we did in Exercise 2.1 by getting the dot product of the same query with your new TF-IDF doc-term matrix.
 Does the ranking change? If there is a change in ranking, what do you think could account for this?
 
 
 ## Exercise 3: Finding similar documents
 
-Using the doc=term matrix from Exercise 3, use cosine similarity for each document pair to find which two documents are most similar to each other.
+Using the doc-term matrix from Exercise 2.2, use cosine similarity for each document pair to find which two documents are most similar to each other.
+
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
 Which document-pair are most similar to each other? How about the least similar? Does it follow your intuition.
 
-Suppose you have a another three documents that you have not seen so far:
+Suppose you are given three new documents that you have not seen so far:
 
 ````python
 new_docs = ['Plane crash in Baden-Wuerttemberg',
