@@ -160,7 +160,8 @@ pip install gensim
 ````
 
 Topic modelling works better if we have more data.
-We have provided the 'denews.txt'[^1] which consists of short news stories separated with tags.
+We have provided [de-news.txt](docs/day7/de-news.txt),
+which consists of short news stories separated with tags.
 Use the following method to separate the articles (you can also preprocess the articles to remove stopwords, punctuations, etc. if you want):
 ````python
 def prepare_dataset(filename):
@@ -195,6 +196,3 @@ for k in range(n_topics):
  * Would you be able to describe in your own words what each topic is about?
  * Why or why not?
  * **Submit your answers**
-
-
-[^1]: [de-news](docs/day7/de-news.txt)
