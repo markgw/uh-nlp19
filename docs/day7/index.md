@@ -120,12 +120,20 @@ Tip: The ````itertools```` package can produce the document pairs so you don't h
 Suppose you are given three new documents that you have not seen so far:
 
 ````python
-new_docs = ['Plane crash in Baden-Wuerttemberg',
-	'Bavaria comes up with model for tax-reform',
-	'The weather']
+new_docs = [
+    'Plane crash in Baden-Wuerttemberg',          # Doc 3a
+	'Bavaria comes up with model for tax-reform', # Doc 3b
+	'The weather'                                 # Doc 3c
+]
 `````
-Construct the TF-IDF matrix for these unseen documents and find the documents from our original corpus that are most similar to each of these new documents
-using cosine similarity. Which document is most similar to the first new document? How about the second one? And the third one?
+
+Construct the TF-IDF matrix for these unseen documents and find the documents from our original corpus that are most similar to each
+using cosine similarity.
+
+ * Which document is most similar to the first new document?
+ * How about the second one?
+ * And the third one?
+ * **Submit your answers to these questions and those above**
 
 
 ## Exercise 4: Topic modelling
