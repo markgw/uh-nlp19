@@ -72,7 +72,7 @@ As an example, your output could look like "*The Golden Palace is a Chinese coff
 
 **Don't get too stuck with this assignment, it's fine to do something simple.** Consider doing the following assignments first.
 
-> **Submit to Moodle** examples of output from your improved system together with the scores obtained using the `score` method.
+> **Submit to Moodle** examples of output from your (hopefully) improved system together with the scores obtained using the `score` method. It's perfectly OK if you can't get the scores to go up as long as you tried something out. 
 
 ## Exercise 5: Reflect on the complexity
 
