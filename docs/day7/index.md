@@ -21,53 +21,98 @@ documents = ['Wage conflict in retail business grows',
 In this exercise, we will build a simple document-term matrix for the documents in Exercise 0.
 
 ### Exercise 1.1: Step-by-step construction of the doc-term matrix
-For each document, convert to lowercase, tokenize, remove stopwrods and then lemmatize.
-For lemmatization, you can make use of the lemmatizer included in the NLTK library.
-````python
-from nltk.stem.wordnet import WordNetLemmatizer
-lemma = WordNetLemmatizer()
-lemma.lemmatize(word)
-````
-Construct a vocabulary for your corpus which is all the words that appear in the documents minus stopwords.
-The shape of the matrix will be the no. of documents by the vocabulary size (n_docs x vocab_size).
-What is the shape of your matrix?
+For each document, convert to lowercase, tokenize, remove stopwords and then lemmatize.
 
-Construct the document-term matrix by going through each document and checking if the vocabulary word is present or not.
+You can use your code from day 2's assignment to do all of these
+things: the `filter_text()` function. (You will need to remove the
+sentence tokenizer, but otherwise you can reuse the code exactly.)
+
+Construct a vocabulary for your corpus which is all the words that appear in the documents minus stopwords.
+
+Construct a document-term matrix by going through each document and checking if the vocabulary word is present or not.
+
+The shape of the matrix will be the no. of documents by the vocabulary size `(n_docs x vocab_size)`.
+
+ * What is the shape of your matrix?
+ * **Submit the matrix shape**
+
 
 ### Exercise 1.2: Using scikit-learn to build the doc-term matrix
 
-Scikit-learn actually has a method called the CountVectorizer to build document-term matrices easily and includes a number of options
-such as removing stopwords, tokenizing, indicationg encoding (important for documents in other languages), and others.
-For more information, go to this page: [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
+Try importing Scitkit-learn:
+````python
+import sklearn
+````
+If you do not have it installed, install it in your virtual environment:
+````sh
+pip install scikit-learn
+````
+
+
+Scikit-learn actually has a method called the
+[CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
+to build document-term matrices easily and includes a number of options
+such as removing stopwords, tokenizing, indicating encoding (important for documents in other languages), and others.
+For more information, see  [the documentation](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html).
 At the bottom of the page is a code snippet to build count vectors for each document. You can easily convert these to a binary doc-term matrix.
 
-How does your doc-term matrix from 1A compare to your doc-term matrix from 1B? Are they exactly the same or are their differences?
+````python
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(corpus)
+counts = X.toarray()  # Get the doc-term count matrix
+dt = counts > 0       # Convert to a binary matrix
+doc_term_mat = dt * 1 # If you prefer, represent as 1s and 0s
+````
+
+How does your doc-term matrix from 1.1 compare to your doc-term matrix from 1.2? Are they exactly the same or are their differences?
 If they are different, what could account for such difference?
 
-For the next exercises, we will make use the doc-term matrix with count vectors produced by the CountVectorizer.
+For the next exercises, we will make use the doc-term matrix with count vectors produced by the `CountVectorizer`.
+
 
 ## Exercise 2: Ranking documents by query
 
 ### Exercise 2.1: Using the dot product to rank documents
 
-Suppose you have the query 'retail wages'. Rank the documents by relevance to this query by getting the dot product of the query by the doc-term matrix.
-Which document is the most relevant? Does it align with your intuition?
+Suppose you have the query *'retail wages'*. Rank the documents by relevance to this query by getting the dot product of the query by the doc-term matrix.
 
-Normalize the count vectors by the document length and perform the same relevance ranking. Does it produce the same results?
+Use `numpy`'s [`dot()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html)
+to compute dot products.
+
+ * Which document is the most relevant?
+ * Does it align with your intuition?
+
+> If necessary, [remind yourself](https://mathinsight.org/matrix_vector_multiplication)
+> of what happens when you
+> take a dot product of a matrix and vector.
+
+Normalize the count vectors by the document length and perform the same relevance ranking.
+
+ * Does it produce the same results?
+ * **Submit your answers**
 
 ### Exercise 2.2: Using TF-IDF to weight words
 
 In this exercise, we will convert our doc-term matrix which is composed of count vectors to TF-IDF vectors.
-Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from scikit-learn.
+Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from Scikit-learn. This implements the TF-IDF calculations seen in lectures.
+
 Perform the same relevance ranking that we did in Exercise 2 by getting the dot product of the same query with your new TF-IDF doc-term matrix.
-Does the ranking change? If there is a change in ranking, what do you think could account for this?
+
+ * Does the ranking change?
+ * If so, what do you think could account for this?
+ * **Submit your answers**
 
 
 ## Exercise 3: Finding similar documents
 
-Using the doc=term matrix from Exercise 3, use cosine similarity for each document pair to find which two documents are most similar to each other.
+Using the doc-term matrix from Exercise 3, compute cosine similarity for each document pair to find which two documents are most similar to each other.
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
-Which document-pair are most similar to each other? How about the least similar? Does it follow your intuition.
+
+ * Which document pair are most similar to each other?
+ * How about the least similar?
+ * Does it follow your intuition.
 
 Suppose you have a another three documents that you have not seen so far:
 
