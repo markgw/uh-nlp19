@@ -55,7 +55,7 @@ output = "<something>."
 if mr.family_friendly == "yes":
     output += " X is family friendly."
 elif mr.family_friendly == "no":
-    output += " X is not family friendly.
+    output += " X is not family friendly."
 else:
     # Say nothing about family friendliness
     pass
