@@ -39,6 +39,8 @@ Familiarize yourself with the `MeaningRepresentation` class in `ass6utils.py`, e
 
 Run the code a few times (5 or so) and observe the results. Note that the `score` method applies your NLG-method to the whole `devset` corpus, not just the ten random samples shown to you.
 
+**NB:** The utils code is using the `meteor_score` method which is a fairly new addition to the NLTK. If you are getting an import error, try updating NLTK. If this doesn't work, just remove the import of `nltk.translate.meteor_score` as well as the call to it in the `score` method.
+
 > **Submit to Moodle** your answers to the following questions:
 > 1. What kinds of scores is this extremely simple system achieving
 > 2. How do they compare to the baseline results on the challenge's website?
