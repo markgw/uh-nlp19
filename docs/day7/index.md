@@ -121,7 +121,7 @@ doc_count = len(documents)
 doc_list = [i for i in range(doc_count)]
 doc_pairs = list(itertools.combinations(doc_list, 2))
 # doc_pairs contain tuples where each tuple is a pair of document index numbers
-```
+````
 
  * Which document pair are most similar to each other?
  * Does it follow your intuition?
