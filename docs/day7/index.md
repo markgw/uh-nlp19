@@ -110,6 +110,8 @@ Perform the same relevance ranking that we did in Exercise 2 by getting the dot 
 
 ## Exercise 3: Finding similar documents
 
+### Exercise 3.1
+
 Using the doc-term matrix from Exercise 2.2, use cosine similarity for each document pair to find which two documents are most similar to each other.
 
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
@@ -122,25 +124,24 @@ doc_pairs = list(itertools.combinations(doc_list, 2))
 ```
 
  * Which document pair are most similar to each other?
- * How about the least similar?
- * Does it follow your intuition.
+ * Does it follow your intuition?
 
-Suppose you are given three new documents that you have not seen so far:
+### Exercise 3.2
+
+Suppose you are given two new documents that you have not seen so far:
 
 ````python
 new_docs = [
     'Plane crash in Baden-Wuerttemberg',          # Doc 3a
-	'Bavaria comes up with model for tax-reform', # Doc 3b
-	'The weather'                                 # Doc 3c
+	'The weather'                             # Doc 3b
 ]
 `````
 
 Construct the TF-IDF matrix for these unseen documents and find the documents from our original corpus that are most similar to each
 using cosine similarity.
 
- * Which document is most similar to the first new document?
- * How about the second one?
- * And the third one?
+ * Which document is most similar to the first new document (Doc 3a)?
+ * How about the second one (Doc 3b)?
  * **Submit your answers to these questions and those above**
 
 
