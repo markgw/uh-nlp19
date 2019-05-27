@@ -138,8 +138,20 @@ using cosine similarity.
 
 ## Exercise 4: Topic modelling
 
-We will use the [Gensim package](https://radimrehurek.com/gensim/models/ldamodel.html) to perform topic modelling on a corpus of news articles. Topic modelling works better if we have more data.
-We have provided the 'denews.txt' which consists of short news stories separated with tags.
+We will use the [Gensim package](https://radimrehurek.com/gensim/models/ldamodel.html) to perform topic modelling on a corpus of news articles.
+
+Check whether Gensim is installed and importable:
+````python
+import gensim
+````
+
+If not, install it in your virtual environment:
+````sh
+pip install gensim
+````
+
+Topic modelling works better if we have more data.
+We have provided the 'denews.txt'[^1] which consists of short news stories separated with tags.
 Use the following method to separate the articles (you can also preprocess the articles to remove stopwords, punctuations, etc. if you want):
 ````python
 def prepare_dataset(filename):
@@ -154,19 +166,27 @@ def prepare_dataset(filename):
     return articles
 ````
 
-The most popular topic modelling method is LDA. The following lines will train a topic model for two topics using Gensim:
+The most popular topic modelling method is LDA. The following lines will train a topic model with two topics using Gensim:
 ````python
 from gensim.models import LdaModel
 from gensim import corpora
+
 common_dictionary = corpora.Dictionary(articles)
+# Transform each doc into a bag of words
 common_corpus = [common_dictionary.doc2bow(a) for a in articles]
-# this line is the actual training part and might take a few minutes
+# This line is the actual training part and might take a few minutes
 n_topics = 2
 lda = LdaModel(common_corpus, id2word=common_dictionary, num_topics=n_topics, passes=100)
-# after training is done, we can check the top words of each topic
+# After training is done, we can check the top words of each topic
 for k in range(n_topics):
 	top_words = lda.show_topic(k, topn=5)
 ````
 
-What are the top five words for each topic? Would you be able to describe in your own words what each topic is about?
-Why or why not?
+ * What are the top five words for each topic?
+ * Would you be able to describe in your own words what each topic is about?
+ * Why or why not?
+ * **Submit your answers**
+
+
+[^1] This will be uploaded and linked to from here. If this message is still
+  here, prod Mark or Elaine to update this document!
