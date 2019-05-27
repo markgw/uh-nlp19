@@ -57,6 +57,8 @@ Try to improve the system by producing more complex sentence structures. After e
 
 As an example, your output could look like "*The Golden Palace is a Chinese coffee shop in riverside. It is in the £20-25 range and is of high quality.*" or "*The Eagle, a family friendly Chinese coffee shop in city centre near Burger King, has high prices and is rated 1 out of 5 stars.*"
 
+**Don't get too stuck with this assignment, it's fine to do something simple.** Consider doing the following assignments first.
+
 > **Submit to Moodle** examples of output from your improved system together with the scores obtained using the `score` method.
 
 ## Exercise 5: Reflect on the complexity
