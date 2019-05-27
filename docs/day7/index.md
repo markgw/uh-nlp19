@@ -38,7 +38,7 @@ Construct the document-term matrix by going through each document and checking i
 
 Scikit-learn actually has a method called the [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) to build document-term matrices easily and includes a number of options
 such as removing stopwords, tokenizing, indicationg encoding (important for documents in other languages), and others.
-At the bottom of the page is a code snippet to build count vectors for each document. You can easily convert these to a binary doc-term matrix.
+At the bottom of the CountVectorizer page is a code snippet to build count vectors for each document. You can easily convert these to a binary doc-term matrix.
 
 How does your doc-term matrix from 1.1 compare to your doc-term matrix from 1.2? Are they exactly the same or are their differences?
 If they are different, what could account for these differences?
@@ -56,8 +56,9 @@ Normalize the count vectors by the document length and perform the same relevanc
 
 ### Exercise 2.2: Using TF-IDF to weight words
 
-In this exercise, we will convert our doc-term matrix which is composed of count vectors to TF-IDF vectors.
-Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from scikit-learn.
+In the previous exercise, our doc-term matrix is composed of count vectors where each element in the vector is the number of times a word appeared in the document.
+In this exercise, we will convert that doc-term matrix to a doc-term matrix composed of TF-IDF vectors.
+Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from Scikit-learn.
 Perform the same relevance ranking that we did in Exercise 2.1 by getting the dot product of the same query with your new TF-IDF doc-term matrix.
 Does the ranking change? If there is a change in ranking, what do you think could account for this?
 
@@ -98,7 +99,7 @@ def prepare_dataset(filename):
     return articles
 ````
 
-The most popular topic modelling method is LDA. The following lines trains a topic model for two topics using Gensim:
+The most popular topic modelling method is LDA. The following lines will train a topic model for two topics using Gensim:
 ````python
 from gensim.models import LdaModel
 from gensim import corpora
