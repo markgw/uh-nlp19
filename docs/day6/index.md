@@ -8,7 +8,7 @@ Read the website of the [End-to-End NLG Challenge](http://www.macs.hw.ac.uk/Inte
 
 > **Submit to Moodle** your answer to the following questions:
 > 1. How difficult does the task appear to you?
-> 2. Observe the scores reported in the section "Basedline System". Are they meaningful in isolation?
+> 2. Observe the scores reported in the section "Baseline System". Are they meaningful in isolation?
 > 3. What are your thoughts on the variety of language in the references of the devset?
 
 ## Exercise 2: Very simple NLG
@@ -71,7 +71,7 @@ As an example, your output could look like "*The Golden Palace is a Chinese coff
 > 3. Using the Gatt & Krahmer classification (Refer to slides), how would you characterize the system you built?
 > 4. Think back on your answers to Exercise #1. Did the task turn out easier or more difficult than you anticipated?
 > 5. Think about the pros and cons of the neural systems as discussed in the lecture. Do you think this task is good for them (consider the data, the complexity etc.)? Do you expect them to fare better than "classical" systems?
-> 6. How do the Baseline scores (on the E2E website) compare to your scores? How did you compare to the other system reported in Table 3 of the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf)?
+> 6. How do the Baseline scores (on the E2E website) compare to your scores? How did you compare to the other systems reported in Table 3 of the [Findings of the E2E NLG Challenge -paper](https://arxiv.org/pdf/1810.01170.pdf)?
 > 7. Look at the same table. Check from the caption how the colors match the system architectures. How are the rule-based and template-based systems faring against the seq2seq and other data-driven systems? Does this match your expectation from before?
 
 
