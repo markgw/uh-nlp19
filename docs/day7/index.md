@@ -189,5 +189,5 @@ for k in range(n_topics):
  * **Submit your answers**
 
 
-[^1] This will be uploaded and linked to from here. If this message is still
+[^1]: This will be uploaded and linked to from here. If this message is still
   here, prod Mark or Elaine to update this document!
