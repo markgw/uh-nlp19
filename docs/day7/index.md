@@ -49,7 +49,7 @@ pip install scikit-learn
 ````
 
 
-Scikit-learn actually has a method called the
+Scikit-learn actually has a class called the
 [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
 to build document-term matrices easily and includes a number of options
 such as removing stopwords, tokenizing, indicating encoding (important for documents in other languages), and others.
@@ -77,6 +77,7 @@ For the next exercises, we will make use the doc-term matrix with count vectors 
 ### Exercise 2.1: Using the dot product to rank documents
 
 Suppose you have the query *'retail wages'*. Rank the documents by relevance to this query by getting the dot product of the query by the doc-term matrix.
+To convert the query string into a vector, use the `transform()` method of the vectorizer you created in the previous exercise. Remember that the vectorizer expects a list of strings.
 
 Use `numpy`'s [`dot()`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html)
 to compute dot products.
@@ -89,10 +90,10 @@ to compute dot products.
 > take a dot product of a matrix and vector. Looking
 > at the diagrams on the lecture slides might also help.
 
-Normalize the count vectors by the document length and perform the same relevance ranking.
+Normalize the count vectors of the doc-term matrix by the document length and perform the same relevance ranking.
 
  * Does it produce the same results?
- * **Submit your answers**
+ * **Submit your answers. Include the dot products of the query with the unnormalized and normalized doc-term matrices.**
 
 ### Exercise 2.2: Using TF-IDF to weight words
 
@@ -101,7 +102,7 @@ In the previous exercise, our doc-term matrix is composed of count vectors where
 In this exercise, we will convert our doc-term matrix which is composed of count vectors to TF-IDF vectors.
 Construct a TF-IDF doc-term matrix using the [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer) from Scikit-learn. This implements the TF-IDF calculations seen in lectures.
 
-Perform the same relevance ranking that we did in Exercise 2 by getting the dot product of the same query with your new TF-IDF doc-term matrix.
+Perform the same relevance ranking that we did in Exercise 2.1 by getting the dot product of the same query with your new TF-IDF doc-term matrix. Don't forget to convert the query string to a vector using the `transform()` method of the `TfidfVectorizer` this time.
 
  * Does the ranking change?
  * If so, what do you think could account for this?
@@ -161,8 +162,8 @@ pip install gensim
 
 Topic modelling works better if we have more data.
 We have provided [de-news.txt](de-news.txt),
-which consists of short news stories separated with tags.
-Use the following method to separate the articles (you can also preprocess the articles to remove stopwords, punctuations, etc. if you want):
+which consists of 9 short news stories separated with tags.
+Use the following method to separate the articles (you can also preprocess the articles to remove stopwords, punctuations, etc. if you want).
 ````python
 def prepare_dataset(filename):
     articles = []
