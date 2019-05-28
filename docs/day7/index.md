@@ -114,6 +114,7 @@ Perform the same relevance ranking that we did in Exercise 2.1 by getting the do
 ### Exercise 3.1
 
 Using the doc-term matrix from Exercise 2.2, use cosine similarity for each document pair to find which two documents are most similar to each other.
+You can use the `cosine_similarity()` method from Scikit-learn for this.
 
 Tip: The ````itertools```` package can produce the document pairs so you don't have to construct them yourselves.
 ````python
@@ -138,7 +139,7 @@ new_docs = [
 ]
 `````
 
-Construct the TF-IDF matrix for these unseen documents and find the documents from our original corpus that are most similar to each
+Construct the TF-IDF matrix for these unseen documents (use `transform()` again, not `fit_transform()`) and find the documents from our original corpus that are most similar to each
 using cosine similarity.
 
  * Which document is most similar to the first new document (Doc 3a)?
@@ -185,9 +186,9 @@ from gensim import corpora
 common_dictionary = corpora.Dictionary(articles)
 # Transform each doc into a bag of words
 common_corpus = [common_dictionary.doc2bow(a) for a in articles]
-# This line is the actual training part and might take a few minutes
+# This line is the actual training part and might take a few seconds
 n_topics = 2
-lda = LdaModel(common_corpus, id2word=common_dictionary, num_topics=n_topics, passes=100)
+lda = LdaModel(common_corpus, id2word=common_dictionary, num_topics=n_topics, passes=200)
 # After training is done, we can check the top words of each topic
 for k in range(n_topics):
 	top_words = lda.show_topic(k, topn=5)
