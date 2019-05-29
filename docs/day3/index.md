@@ -22,8 +22,12 @@ using **Maximum Likelihood Estimation** (MLE) based on
 counts from the corpus. (See lecture slides for more
 explanation of this.)
 
-You can load data from the corpus like this (you will need
-to download the data once first, using `nltk.download()`):
+Start by downloading the MASC corpus:
+````python
+nltk.download("masc_tagged")
+````
+
+You can load data from the corpus like this:
 ````python
 from nltk.corpus import masc_tagged
 print(masc_tagged.tagged_sents()[0])
@@ -49,8 +53,8 @@ Compute both of these distributions.
 
  * Collect these counts and estimate the distributions for `VB`
     using MLE.
- * Submit the computed *p(t[i+1] = DT | t[i] = VB)* - the probability
-    of a verb being followed by a determiner.
+ * **Submit the computed *p(t[i+1] = DT | t[i] = VB)* - the probability
+    of a verb being followed by a determiner.**
  * **Submit the computed *p(w[i] = 'feel' &#124; t[i] = VB)*.**
 
 
@@ -63,7 +67,9 @@ train an HMM using MLE, exactly as you have done above.
 The class `nltk.tag.hmm.HiddenMarkovModelTagger` implements
 HMM training and tagging.
 
-Use the function `HiddenMarkovModelTagger.train()` to estimate
+Use the function
+[`HiddenMarkovModelTagger.train()`](https://www.nltk.org/api/nltk.tag.html#nltk.tag.hmm.HiddenMarkovModelTagger.train)
+to estimate
 all probabilities for an HMM POS tagger from the MASC corpus.
 
 Your HMM can now be used to tag new sentences:
@@ -73,7 +79,8 @@ tagged_sent = hmm.tag(
 )
 ````
 
-> The POS tag set used by this corpus is the same as the Penn Treebank.
+> The POS tag set used by this corpus is the same as the Penn Treebank
+> and the same one used by the tagger in yesterday's assignment.
 > You can find a [description of each tag here](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
 
 Try tagging the following sentences:
@@ -147,6 +154,21 @@ cover words unseen in the labelled data. (This is a form of
 **semi-supervised** learning.)
 
 Train an HMM using the previous labelled data as well as the new raw data.
+This could take a bit of time to run (for me it took 1-2m per iteration).
+The default number of iterations is 3, but, if you have time, you might
+like to try increasing this
+(using the `max_iterations` kwarg to `train_unsupervised()`).
+
+> Training this model could take up to 15m, depending on the parameters
+> you set and the computer you're running on. You will reuse it
+> in the following exercises.
+>
+> It's a good idea to store your trained model (returned by
+> `train_unsupervised()`) to a file using Python's
+> [`pickle` library](https://docs.python.org/3/library/pickle.html)
+> and then load it again on subsequent runs, so you don't have to
+> re-train it every time you run the later exercises.
+
 Try tagging the earlier example sentences with the new model.
 
 Also try tagging some new sentences from later in *Radio Planet*:
@@ -173,12 +195,19 @@ e.g. fiction, news, legal documents, ...
 
 ## Exercise 5: HMM as a language model
 
-The HMM class has a method `log_probability()` that uses the full
+The HMM class has a method
+[`log_probability()`](https://www.nltk.org/api/nltk.tag.html#nltk.tag.hmm.HiddenMarkovModelTagger.log_probability)
+that uses the full
 generative model to assign a probability to a given input sentence.
 This allows you to use your trained model as a **language model**.
 The model is similar to the Markov language model seen in the
 lecture, except that word probabilities are conditioned on (unknown,
 inferred) POS tags.
+
+> The `log_probability()` method expects a list of `(word, pos_tag)`
+> pairs as input. You don't have to specify the POS tag (it will
+> sum over all possible tags if not given), but you still have to
+> give it `(word, None)` pairs.
 
 Try using your models as LMs. Measure the log probability of some
 short sentences (perhaps including some of the examples above)
@@ -192,12 +221,16 @@ up: use real words that are likely to be covered by the model.
    real and nonsense sentences?
  * **Submit your answers**
 
+> We will carry out a similar comparison, applying better evaluation
+> techniques, on day 5.
 
 
 ## Exercise 6: Generating from HMMs
 
 The HMM provides a simple method to sample random sentences from the
-model, `random_sample(rng, length)`. It requires a random number
+model,
+[`random_sample(rng, length)`](https://www.nltk.org/api/nltk.tag.html#nltk.tag.hmm.HiddenMarkovModelTagger.random_sample).
+It requires a random number
 generator (you can use Python's `random` module) and a length for
 the sentence.
 

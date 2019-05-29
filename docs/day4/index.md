@@ -43,7 +43,7 @@ print(small_cfg.is_flexible_chomsky_normal_form())
 
 ![Example tree 1](example_tree1.png "Example tree 1")
 
-![Example tree 2](example_tree1.png "Example tree 2")
+![Example tree 2](example_tree2.png "Example tree 2")
 
  * Look at the two example trees above, taken from the Penn Treebank.
    Write a CFG using the above format that produces
@@ -170,7 +170,9 @@ license, but this sample is enough for us to build a
 treebank grammar from.
 
 Start by loading the treebank as follows and taking a
-look at a couple of its parse trees:
+look at a couple of its parse trees, which are instances
+of NLTK's [Tree](https://www.nltk.org/api/nltk.html#nltk.tree.Tree)
+class:
 
 ````python
 from nltk.corpus import treebank
@@ -183,11 +185,35 @@ Or, graphically:
 ````python
 treebank.parsed_sents()[0].draw()
 ````
+The trees in the corpus are represented using NLTK's own data structures,
+including:
+ * [Nonterminal](https://www.nltk.org/api/nltk.html#nltk.grammar.Nonterminal): represents non-terminal nodes in the tree
+ * [Production](https://www.nltk.org/api/nltk.html#nltk.grammar.Production): represents productions/expansions of the form A->B C (etc.)
+
+The same data structures (classes) are used the represents NTs and
+productions in the grammars you created above. When you called
+`CFG.fromstring()`, the result was a
+[CFG](https://www.nltk.org/api/nltk.html#nltk.grammar.CFG) object,
+which contained `Nonterminal`s, `Production`s and strings defining
+the CFG (see lectures).
+
+The complete set of productions used in a parse tree is directly
+available through its `tree.productions()` method.
+
+Given a set of productions using these NLTK data structures,
+you can directly build a CFG as follows:
+````python
+cfg = nltk.CFG(nltk.Nonterminal("S"), productions)
+````
+
+This defines the `S` non-terminal as the start symbol of
+the grammar. The set of non-terminals and terminals will be all
+of those used in the list of productions.
 
 Build a treebank grammar from all the trees in this sample
 of the corpus.
 
-Use your grammar as you did in  to parse the following
+Use your grammar as you did in exercise 4 to parse the following
 sentences.
 
 ````
