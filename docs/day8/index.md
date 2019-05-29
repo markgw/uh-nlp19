@@ -83,21 +83,31 @@ The folder consists of two sub-folders: `raw` that contains plain-text
 documents, and `ann` that contains the same documents manually
 annotated with temporal expression.
 
-* Write a program, that processes `raw` documents one by one,
-  annotates temporal expressions in each of them (using regular
-  expressions made on the previous step) and output the result into a new
-  folder.
+* Download [process_folder.py](process_folder.py) script.
 
-Use regular expressions made in Exercise 1.1. The documents in
-the new folder should be named `<no>_sub.txt`, where `<no>` is the
-same document number as in `raw` folder.
+This is a script, that processes `raw` documents one by one, annotates
+temporal expressions in each of them using regular expressions and
+output the result into a new folder called `sub`. 
+
+* Extend `process_folder.py` script so that it capture more time
+  expressions. Use regular expressions made in Exercise 1.1.
+
+* Run your script on the training data like this:
+
+````bash
+python process_folder.py train/raw
+````
+
+Now you have an output folder `train/sub`. The documents in the new
+folder are named `<no>_sub.txt`, where `<no>` is the same document
+number as in `raw` folder.
 
 * Download the scorer [scorer.py](scorer.py) and run it on the output of the previous step.
 
 The scorer takes three parameters: path to the gold annotations folder, path to the system output folder and (optional) name of the output. E.g.:
 
 ````bash
-python train/ann/ train/sub/ train.txt
+python scorer.py train/ann/ train/sub/ train.txt
 ````
 
 The scorer outputs the evaluation measures---recall, precision and
@@ -144,11 +154,23 @@ the same sentences that used in Exercise 1.1
 
 ### Exercise 2.2
 
-* Write a program, that process raw documents one by one, annotates them with temporal expressions using spaCy pattern matcher and prints output to another folder.
+* Download [process_folder_spacy.py](process_folder_spacy.py). 
 
-Use patterns made in Exercise 2.1. The documents in
-the new folder should be named `<no>_sub.txt`, where `<no>` is the
-same document number as in `raw` folder.
+This is a script, that process `raw` documents one by one, annotates them with temporal expressions using spaCy pattern matcher and prints output to another folder called `sub2`.
+
+* Extend `process_folder_spacy.py` script so that it captures more
+  time expressions.  Use patterns made in Exercise 2.1.
+
+
+* Run your script on the training data like this:
+
+````bash
+python process_folder_spacy.py train/raw
+````
+
+Now you have an output folder `train/sub2`. The documents in the new
+folder are named `<no>_sub.txt`, where `<no>` is the same document
+number as in `raw` folder.
 
 * Run scorer on the output of the previous step.
 
