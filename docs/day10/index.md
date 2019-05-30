@@ -31,7 +31,10 @@ less ambitious!) for this purpose.
  * Punny metaphor generation system
  * Automatic medical diagnosis system
  * Recognizing politicians' stand-point through their Twitter
- * *More to come!*
+ * Identify similar words
+ * Text summarization
+ * Language generation
+ * News tagging
 
 
 ## Instructions
@@ -165,3 +168,166 @@ profession or selling it to make millions.
 
 
 ### Recognizing politicians' stand-point through their Twitter
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864582)
+
+Pipeline:
+ 1. Extract English data from twitter messages of politicians
+   running for the EU parliament
+ 2. Tokenization
+ 3. Lemmatization
+ 4. POS tagging
+ 5. NER (for example EU, politic parties)
+ 6. Parsing
+ 7. Sentence-level semantics
+ 8. Semantic-role labeling
+   (Finding the relation, i.e. stand-point.
+   For example same-sex marriage for or against?)
+ 9. Analyzing the agreement-level/Multi-level classification
+   (For example very much against, against, neutral, okay with it, for it)
+
+Potential problems:
+ - Twitter text can be noisy (for example slang) and short -> true message doesn't come through. Worst case might classify a politicians as against something rather than for
+ - Politicians often use moderate words or tricky expressions to not take such a strong stance. Rather be neutral/hope for the reader to impose her/his own opinions
+ - Sarcasm/humour is not easy to recognize
+
+Some further problems, for this assignment:
+ 1. The above pipeline is not easy to implement quickly (or at all...?)
+ 2. Labelled data may be possible to retrieve (e.g. from Vaalikone),
+    but preparing the data may take a lot of time.
+
+**Regarding 1:** Think about simpler, shallower methods you could
+try. E.g. some features from lower-level processing could be fed
+into a classifier, instead of relying on more abstract analysis.
+
+**Alternatively**, you could try some ready-made systems for English
+abstract analysis (e.g. SRL) and try to find some relatively reliable
+signals of stance they produce.
+
+**Regarding 2:** Perhaps there's a related task for which data is
+more easily available, which could be seen as a test case or proof of
+concept for the task above.
+[Take a look at this list](https://github.com/shaypal5/awesome-twitter-data),
+for example.
+
+
+### Identify similar words
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864581#p2126484)
+
+Pipeline:
+ 1. Sentence level tokenization
+ 2. Word level tokenization
+ 3. Remove stop words and punctuation
+ 4. Lemmatization
+ 5. Morphological analysis
+ 6. Chunking to phrases
+ 7. Vectorizing words
+ 8. Comparing cosine similarities
+
+There are lots of sources of ready-made word vectors out there for
+English, and many other languages. However, this could be an interesting
+thing to try because:
+ * it gives you practical experience of constructing embeddings;
+ * you can play around with different methods (e.g. dependency-based
+   features, phrase vectors) to see how they affect the results;
+ * you could experiment with the effects of training on different
+   languages, domains, language types, etc.
+
+
+### Text summarization
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864580#p2126483)
+
+Text summarizatoin accepts as input an arbitrary text (e.g. news article, conversation) and produces its short summary.
+
+**It uses**
+
+Standard NLP components:
+ * tokenization
+ * lemmatization
+ * POS tagging
+ * Parsing
+ * Named-entity recognition
+ * Morphology
+ * Semantic-role labelling
+ * Sentence-level semantics
+ * Document meaning / analysis
+
+Additionally, we can add speech recognition as the first step
+
+Additional components:
+ * Remove redundancy and details from the text
+ * NLG components to produce the summary
+
+Potential problems:
+ * Tokenizer might split sentence and word boundaries wrongly;
+ * Lemmatizer might lemmatize words wrongly;
+ * NER component might misdetect NEs;
+ * Semantic-role labelling might label roles wrongly; etc.
+ * And all above mentioned could lead to change of meaning.
+
+**Challenge:** How to choose what is important in the text?
+
+Of course, this is a big task and will take a long time to do
+well. But it could be very interesting to see how far you can
+get with just a few analysis tools and simple strategies for
+choosing important phrases, constructing the summary, etc.
+
+
+### Language generation
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864579#p2126481)
+
+*A system for generating text.*
+
+ 1. A large corpus is split into sentences.
+ 2. Tokenization
+ 3. Lemmatization
+ 4. Build a generative language model (e.g. markov chain)
+
+Generative model probably outputs bad language and nonsense. The quality of the model depends on the corpus. A more complex model and domain specific corpus needed for passable results.
+
+Interesting things you could explore/learn from this:
+ * Effect of different corpora on results
+ * Different types of LM: e.g. you could try an LSTM
+ * Possible ways to control the output: e.g. condition the sentence on some
+   feature from training documents' metadata, like keywords from headlines
+   or categories, which can then be set by at generation time
+ * Strategies for sampling coherent and interesting sentences from the
+   model's probability distributions
+
+
+### News tagging
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864577#p2126479)
+
+*The system gives tags to news articles.*
+
+ 1. Sentence splitting
+ 2. Tokenization
+ 3. Lemmatization
+ 4. POS
+ 5. NER
+ 6. Topic modelling?
+
+From NER we can just get some of the named entities as tags. Also maybe use topic modelling.
+
+If lemmatization or NER goes wrong (for example NER does not recognize named entities), then we have problems.
+We might get useless tags. We need to somehow figure out which tags are important.
+
+You could perform some manual error analysis of the output and assess
+where the system is going wrong and how the tagging algorithm could
+produce more useful output.
+
+If you have a dataset with manually assigned tags, you could do this
+by training a classifier, using features from your pipeline. You will
+probably find some suitable examples in one of the lists below.
+
+There are many possible datasets you could try this out on.
+Here are some ideas:
+ - [English, BBC articles](http://mlg.ucd.ie/datasets/bbc.html)
+ - [Swedish news](https://spraakbanken.gu.se/eng/resource/attasidor)
+ - [Fake news corpus](https://github.com/several27/FakeNewsCorpus)
+ - [Others in this list](https://www.clarin.eu/resource-families/newspaper-corpora)
+ - [Others in this list](https://github.com/niderhoff/nlp-datasets)
