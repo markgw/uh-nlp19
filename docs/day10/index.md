@@ -3,7 +3,7 @@
 Today it's time to put together various components of an NLP pipeline that
 we've seen in the course and build a bigger system that does something
 cool. There are no specific exercises: instead you will submit a short
-description of your system, as well as your code.
+report.
 
 **You can choose what you build.** Below are a number of possible options,
 with instructions or ideas on how you might put together a suitable
@@ -14,6 +14,7 @@ expect you to make use of a good number of different NLP components.
 on a suitable scale (i.e. doable in the afternoon session), you're
 welcome to do that. Make sure to explain in your report what
 your system does and why you chose to perform the analyses you did!
+
 
 ## Submission
 
@@ -36,25 +37,26 @@ of the success of your system. The main purpose of this assignment
 is for you to have putting into practice a bit of what you've learned
 for your own benefit.
 
-## System possibilities
 
-Here are the suggestions we have for systems you might build. Further
-down the page, you'll find instructions, tips, ideas, etc. for each.
+## System suggestions
+
+Here are some suggestions for systems you might build. Further
+down are instructions, tips, ideas, etc. for each.
 
 The first two suggestions come from the course organisers. The others
-are your own (collective)
-[ideas that you wrote during day 2's lecture](https://moodle.helsinki.fi/mod/forum/view.php?id=1598902).
-These will mostly need some refinement (in particular, making them
+are your own
+[ideas that you wrote in groups during day 2's lecture](https://moodle.helsinki.fi/mod/forum/view.php?id=1598902).
+They will mostly need some refinement (in particular, making them
 much less ambitious!) for this purpose.
 
  * [Temporal information extraction system](#temporal-information-extraction)
  * [Punny metaphor generation system](#punny-metaphor-generation-system)
- * Automatic medical diagnosis system
- * Recognizing politicians' stand-point through their Twitter
- * Identify similar words
- * Text summarization
- * Language generation
- * News tagging
+ * [Identify similar words](#identify-similar-words)
+ * [Text summarization](#text-summarization)
+ * [Language generation](#language-generation)
+ * [News tagging](#news-tagging)
+ * [Recognizing politicians' stand-point through their Twitter](#recognizing-politicians-stand-point-through-their-twitter)
+ * [Automatic medical diagnosis system](#automatic-medical-diagnosis-system)
 
 
 ## Instructions and ideas
@@ -132,14 +134,6 @@ Now you have three annotators and two scorers. Let's test them on unseen data.
   real application? Which one? Which steps should be done to deploy an annotator into production?
 
 
-#### Acknowledgements
-
-The data used in this assignment are taken from
-[TempEval-3 Temporal Annotation Shared Task](https://www.cs.york.ac.uk/semeval-2013/task1/index.html).
-The shared task used much mpre elaborated annotation schema and consisted
-of several sub-tasks. More details on the tasks and the results can be
-found in the [organizers' paper](https://www.aclweb.org/anthology/S13-2001).
-
 
 ### Punny metaphor generation system
 
@@ -148,43 +142,136 @@ you created on day 2.
 
 *Further description to be added here*
 
-### Automatic medical diagnosis system
 
-[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864583#p2126489)
+### Identify similar words
 
-User calls the medical hotline and describes the symptoms.
-The system tries to guess the nature of the illness based on the description.
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864581#p2126484)
 
-Pipeline components:
- * Speech-to-text
- * Tokenization
- * Lemmatization
- * POS tagging
- * Parsing
- * NER
- * Information Extraction
- * Medical database
- * Bayesian network or similar
- * Prediction
- * Text-to-speech
+Pipeline:
+ 1. Sentence level tokenization
+ 2. Word level tokenization
+ 3. Remove stop words and punctuation
+ 4. Lemmatization
+ 5. Morphological analysis
+ 6. Chunking to phrases
+ 7. Vectorizing words
+ 8. Comparing cosine similarities
 
-For the purposes of this assignment, you probably want to drop the
-speech-related components at the start and end.
+There are lots of sources of ready-made word vectors out there for
+English, and many other languages. However, this could be an interesting
+thing to try because:
+ * it gives you practical experience of constructing embeddings;
+ * you can play around with different methods (e.g. dependency-based
+   features, phrase vectors) to see how they affect the results;
+ * you could experiment with the effects of training on different
+   languages, domains, language types, etc.
 
-Think carefully about what components are necessary and how you will
-use their output further down the pipeline.
 
-A crucial factor in this system will be the **knowledge resources**
-that supply the medical information. Here are a couple you could
-consider:
- * [MedlinePlus Medical Encyclopedia](https://medlineplus.gov/encyclopedia.html)
- * [Diseases Database](http://www.diseasesdatabase.com/content.asp)
 
-However, *avoid spending all your time scraping websites!*
-An easily available, poor quality knowledgebase will be most useful
-as a proof of concept. You can develop your system to use better
-medical databases later, before releasing for use by the medical
-profession or selling it to make millions.
+
+### Text summarization
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864580#p2126483)
+
+Text summarizatoin accepts as input an arbitrary text (e.g. news article, conversation) and produces its short summary.
+
+**It uses**
+
+Standard NLP components:
+* tokenization
+* lemmatization
+* POS tagging
+* Parsing
+* Named-entity recognition
+* Morphology
+* Semantic-role labelling
+* Sentence-level semantics
+* Document meaning / analysis
+
+Additionally, we can add speech recognition as the first step
+
+Additional components:
+* Remove redundancy and details from the text
+* NLG components to produce the summary
+
+Potential problems:
+* Tokenizer might split sentence and word boundaries wrongly;
+* Lemmatizer might lemmatize words wrongly;
+* NER component might misdetect NEs;
+* Semantic-role labelling might label roles wrongly; etc.
+* And all above mentioned could lead to change of meaning.
+
+**Challenge:** How to choose what is important in the text?
+
+Of course, this is a big task and will take a long time to do
+well. But it could be very interesting to see how far you can
+get with just a few analysis tools and simple strategies for
+choosing important phrases, constructing the summary, etc.
+
+
+
+
+### Language generation
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864579#p2126481)
+
+*A system for generating text.*
+
+ 1. A large corpus is split into sentences.
+ 2. Tokenization
+ 3. Lemmatization
+ 4. Build a generative language model (e.g. markov chain)
+
+Generative model probably outputs bad language and nonsense. The quality of the model depends on the corpus. A more complex model and domain specific corpus needed for passable results.
+
+Interesting things you could explore/learn from this:
+ * Effect of different corpora on results
+ * Different types of LM: e.g. you could try an LSTM
+ * Possible ways to control the output: e.g. condition the sentence on some
+   feature from training documents' metadata, like keywords from headlines
+   or categories, which can then be set by at generation time
+ * Strategies for sampling coherent and interesting sentences from the
+   model's probability distributions
+
+
+
+
+
+### News tagging
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864577#p2126479)
+
+*The system gives tags to news articles.*
+
+1. Sentence splitting
+2. Tokenization
+3. Lemmatization
+4. POS
+5. NER
+6. Topic modelling?
+
+From NER we can just get some of the named entities as tags. Also maybe use topic modelling.
+
+If lemmatization or NER goes wrong (for example NER does not recognize named entities), then we have problems.
+We might get useless tags. We need to somehow figure out which tags are important.
+
+You could perform some manual error analysis of the output and assess
+where the system is going wrong and how the tagging algorithm could
+produce more useful output.
+
+If you have a dataset with manually assigned tags, you could do this
+by training a classifier, using features from your pipeline. You will
+probably find some suitable examples in one of the lists below.
+
+There are many possible datasets you could try this out on.
+Here are some ideas:
+- [English, BBC articles](http://mlg.ucd.ie/datasets/bbc.html)
+- [Swedish news](https://spraakbanken.gu.se/eng/resource/attasidor)
+- [Fake news corpus](https://github.com/several27/FakeNewsCorpus)
+- [Others in this list](https://www.clarin.eu/resource-families/newspaper-corpora)
+- [Others in this list](https://github.com/niderhoff/nlp-datasets)
+
+
 
 
 ### Recognizing politicians' stand-point through their Twitter
@@ -231,123 +318,42 @@ concept for the task above.
 for example.
 
 
-### Identify similar words
-
-[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864581#p2126484)
-
-Pipeline:
- 1. Sentence level tokenization
- 2. Word level tokenization
- 3. Remove stop words and punctuation
- 4. Lemmatization
- 5. Morphological analysis
- 6. Chunking to phrases
- 7. Vectorizing words
- 8. Comparing cosine similarities
-
-There are lots of sources of ready-made word vectors out there for
-English, and many other languages. However, this could be an interesting
-thing to try because:
- * it gives you practical experience of constructing embeddings;
- * you can play around with different methods (e.g. dependency-based
-   features, phrase vectors) to see how they affect the results;
- * you could experiment with the effects of training on different
-   languages, domains, language types, etc.
 
 
-### Text summarization
+### Automatic medical diagnosis system
 
-[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864580#p2126483)
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864583#p2126489)
 
-Text summarizatoin accepts as input an arbitrary text (e.g. news article, conversation) and produces its short summary.
+User calls the medical hotline and describes the symptoms.
+The system tries to guess the nature of the illness based on the description.
 
-**It uses**
-
-Standard NLP components:
- * tokenization
- * lemmatization
+Pipeline components:
+ * Speech-to-text
+ * Tokenization
+ * Lemmatization
  * POS tagging
  * Parsing
- * Named-entity recognition
- * Morphology
- * Semantic-role labelling
- * Sentence-level semantics
- * Document meaning / analysis
+ * NER
+ * Information Extraction
+ * Medical database
+ * Bayesian network or similar
+ * Prediction
+ * Text-to-speech
 
-Additionally, we can add speech recognition as the first step
+For the purposes of this assignment, you probably want to drop the
+speech-related components at the start and end.
 
-Additional components:
- * Remove redundancy and details from the text
- * NLG components to produce the summary
+Think carefully about what components are necessary and how you will
+use their output further down the pipeline.
 
-Potential problems:
- * Tokenizer might split sentence and word boundaries wrongly;
- * Lemmatizer might lemmatize words wrongly;
- * NER component might misdetect NEs;
- * Semantic-role labelling might label roles wrongly; etc.
- * And all above mentioned could lead to change of meaning.
+A crucial factor in this system will be the **knowledge resources**
+that supply the medical information. Here are a couple you could
+consider:
+ * [MedlinePlus Medical Encyclopedia](https://medlineplus.gov/encyclopedia.html)
+ * [Diseases Database](http://www.diseasesdatabase.com/content.asp)
 
-**Challenge:** How to choose what is important in the text?
-
-Of course, this is a big task and will take a long time to do
-well. But it could be very interesting to see how far you can
-get with just a few analysis tools and simple strategies for
-choosing important phrases, constructing the summary, etc.
-
-
-### Language generation
-
-[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864579#p2126481)
-
-*A system for generating text.*
-
- 1. A large corpus is split into sentences.
- 2. Tokenization
- 3. Lemmatization
- 4. Build a generative language model (e.g. markov chain)
-
-Generative model probably outputs bad language and nonsense. The quality of the model depends on the corpus. A more complex model and domain specific corpus needed for passable results.
-
-Interesting things you could explore/learn from this:
- * Effect of different corpora on results
- * Different types of LM: e.g. you could try an LSTM
- * Possible ways to control the output: e.g. condition the sentence on some
-   feature from training documents' metadata, like keywords from headlines
-   or categories, which can then be set by at generation time
- * Strategies for sampling coherent and interesting sentences from the
-   model's probability distributions
-
-
-### News tagging
-
-[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864577#p2126479)
-
-*The system gives tags to news articles.*
-
- 1. Sentence splitting
- 2. Tokenization
- 3. Lemmatization
- 4. POS
- 5. NER
- 6. Topic modelling?
-
-From NER we can just get some of the named entities as tags. Also maybe use topic modelling.
-
-If lemmatization or NER goes wrong (for example NER does not recognize named entities), then we have problems.
-We might get useless tags. We need to somehow figure out which tags are important.
-
-You could perform some manual error analysis of the output and assess
-where the system is going wrong and how the tagging algorithm could
-produce more useful output.
-
-If you have a dataset with manually assigned tags, you could do this
-by training a classifier, using features from your pipeline. You will
-probably find some suitable examples in one of the lists below.
-
-There are many possible datasets you could try this out on.
-Here are some ideas:
- - [English, BBC articles](http://mlg.ucd.ie/datasets/bbc.html)
- - [Swedish news](https://spraakbanken.gu.se/eng/resource/attasidor)
- - [Fake news corpus](https://github.com/several27/FakeNewsCorpus)
- - [Others in this list](https://www.clarin.eu/resource-families/newspaper-corpora)
- - [Others in this list](https://github.com/niderhoff/nlp-datasets)
+However, *avoid spending all your time scraping websites!*
+An easily available, poor quality knowledgebase will be most useful
+as a proof of concept. You can develop your system to use better
+medical databases later, before releasing for use by the medical
+profession or selling it to make millions.

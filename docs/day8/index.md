@@ -96,7 +96,7 @@ annotated with temporal expressions.
 
 This is a script, that processes `raw` documents one by one, annotates
 temporal expressions in each of them using regular expressions and
-output the result into a new folder called `sub`. 
+output the result into a new folder called `sub`.
 
 * Extend `process_folder.py` script so that it capture more time
   expressions. Use regular expressions made in Exercise 1.1.
@@ -172,7 +172,7 @@ the same sentences that we used in Exercise 1.1.
 ### Exercise 2.2
 
 
-* Download [process_folder_spacy.py](process_folder_spacy.py). 
+* Download [process_folder_spacy.py](process_folder_spacy.py).
 
 This is a script, that process `raw` documents one by one, annotates them with temporal expressions using spaCy pattern matcher and prints output to another folder called `sub2`.
 
@@ -225,3 +225,12 @@ Try to find cases correctly processed by one annotator but missed by another.
   Add some examples to justify your response.
 
 * **Submit your answers**
+
+
+## Acknowledgements
+
+The data used in this assignment are taken from
+[TempEval-3 Temporal Annotation Shared Task](https://www.cs.york.ac.uk/semeval-2013/task1/index.html).
+The shared task used much mpre elaborated annotation schema and consisted
+of several sub-tasks. More details on the tasks and the results can be
+found in the [organizers' paper](https://www.aclweb.org/anthology/S13-2001).
