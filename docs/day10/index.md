@@ -6,15 +6,35 @@ cool. There are no specific exercises: instead you will submit a short
 description of your system, as well as your code.
 
 **You can choose what you build.** Below are a number of possible options,
-with instructions on how you might go through putting together a suitable
-pipeline. You don't need to follow the instructions exactly, but we
-expect you to make use of a good number of different NLP components
-in your pipeline.
+with instructions or ideas on how you might put together a suitable
+pipeline. You don't need to follow the instructions exactly. We just
+expect you to make use of a good number of different NLP components.
 
 **If you have a great idea** for some other system that you could build,
-on a similar scale to these (i.e. doable in the afternoon session), you're
-welcome to do that instead. Make sure to explain in your report what
+on a suitable scale (i.e. doable in the afternoon session), you're
+welcome to do that. Make sure to explain in your report what
 your system does and why you chose to perform the analyses you did!
+
+## Submission
+
+You should submit a **short report** containing the following:
+ * The task your system addresses
+ * The pipeline you used, especially any standard components
+ * Some analysis of the system's performance: e.g.
+   - Any evaluation results available
+   - Conclusions from manual inspection of output
+   - Problems that meant you didn't any satisfactory output
+ * How you might extend or improve the system if you had more
+   time (or computing resources, or data, ...)
+
+Also submit **your code** as a single Python file.
+(Don't worry too much about cleaning it up or submitting
+production-quality code!)
+
+We will not be grading your submission in any detail on the basis
+of the success of your system. The main purpose of this assignment
+is for you to have putting into practice a bit of what you've learned
+for your own benefit.
 
 ## System possibilities
 
@@ -25,10 +45,10 @@ The first two suggestions come from the course organisers. The others
 are your own (collective)
 [ideas that you wrote during day 2's lecture](https://moodle.helsinki.fi/mod/forum/view.php?id=1598902).
 These will mostly need some refinement (in particular, making them
-less ambitious!) for this purpose.
+much less ambitious!) for this purpose.
 
- * Temporal information extraction system
- * Punny metaphor generation system
+ * [Temporal information extraction system](#temporal-information-extraction)
+ * [Punny metaphor generation system](#punny-metaphor-generation-system)
  * Automatic medical diagnosis system
  * Recognizing politicians' stand-point through their Twitter
  * Identify similar words
@@ -37,7 +57,7 @@ less ambitious!) for this purpose.
  * News tagging
 
 
-## Instructions
+## Instructions and ideas
 
 ### Temporal information extraction
 
