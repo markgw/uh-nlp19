@@ -79,7 +79,7 @@ The following instructions will take you through
 some further ways to develop your system. You are welcome to choose a
 different approach.
 
-#### Part 1: The best ever temporal expression annotator
+**The best ever temporal expression annotator**
 
 * Implement a third annotator, which would combine advantages of
   both annotators, using either regular expressions, or spaCy patterns, or both.
@@ -97,14 +97,13 @@ Repeat this process until you are satisfied with your scores.
 Does it perform better than the other two? If not, try to identify the
 problem and modify your annotator.
 
-#### Part 2: Scorer
+**Scorer**
 
 By this point you have seen a number of the scorer outputs.
 
 * Do you think the evaluation scheme is fair and meaningful?
   Did you spot any evaluation problems? What, in your opinion,
   might be a better evaluation scheme?
-
 * Try to modify the scorer to obtain a more meaningful comparison.
 
 Most probably you would need to modify a function called `update_scores`.
@@ -113,7 +112,7 @@ Most probably you would need to modify a function called `update_scores`.
   Do the results make more sense to you? Why?
 
 
-#### Part 3: Results and discussion
+**Results and evaluation**
 
 Now you have three annotators and two scorers. Let's test them on unseen data.
 
