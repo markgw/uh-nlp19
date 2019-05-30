@@ -197,7 +197,7 @@ Examples:
   * ...
 * Her lawyer is very annoying.
   * Her lawyer is annoying, like a child.
-  * Like a bully, her lawyer is very annoying.
+  * Like a bully, her lawyer is annoying.
   * ...
 
 
