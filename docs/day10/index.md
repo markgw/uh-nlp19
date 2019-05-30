@@ -21,8 +21,16 @@ your system does and why you chose to perform the analyses you did!
 Here are the suggestions we have for systems you might build. Further
 down the page, you'll find instructions, tips, ideas, etc. for each.
 
+The first two suggestions come from the course organisers. The others
+are your own (collective)
+[ideas that you wrote during day 2's lecture](https://moodle.helsinki.fi/mod/forum/view.php?id=1598902).
+These will mostly need some refinement (in particular, making them
+less ambitious!) for this purpose.
+
  * Temporal information extraction system
  * Punny metaphor generation system
+ * Automatic medical diagnosis system
+ * Recognizing politicians' stand-point through their Twitter
  * *More to come!*
 
 
@@ -116,3 +124,44 @@ This system builds on the simple **pun generation system** that
 you created on day 2.
 
 *Further description to be added here*
+
+### Automatic medical diagnosis system
+
+[Original suggestion](https://moodle.helsinki.fi/mod/forum/discuss.php?d=864583#p2126489)
+
+User calls the medical hotline and describes the symptoms.
+The system tries to guess the nature of the illness based on the description.
+
+Pipeline components:
+ * Speech-to-text
+ * Tokenization
+ * Lemmatization
+ * POS tagging
+ * Parsing
+ * NER
+ * Information Extraction
+ * Medical database
+ * Bayesian network or similar
+ * Prediction
+ * Text-to-speech
+
+For the purposes of this assignment, you probably want to drop the
+speech-related components at the start and end.
+
+Think carefully about what components are necessary and how you will
+use their output further down the pipeline.
+
+A crucial factor in this system will be the **knowledge resources**
+that supply the medical information. Here are a couple you could
+consider:
+ * [MedlinePlus Medical Encyclopedia](https://medlineplus.gov/encyclopedia.html)
+ * [Diseases Database](http://www.diseasesdatabase.com/content.asp)
+
+However, *avoid spending all your time scraping websites!*
+An easily available, poor quality knowledgebase will be most useful
+as a proof of concept. You can develop your system to use better
+medical databases later, before releasing for use by the medical
+profession or selling it to make millions.
+
+
+### Recognizing politicians' stand-point through their Twitter
