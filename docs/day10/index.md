@@ -50,7 +50,8 @@ They will mostly need some refinement (in particular, making them
 much less ambitious!) for this purpose.
 
  * [Temporal information extraction system](#temporal-information-extraction)
- * [Punny metaphor generation system](#punny-metaphor-generation-system)
+ * [Metaphor generation system](#metaphor-generation-system)
+ * [Pun generation system](#pun-generation-system)
  * [Identify similar words](#identify-similar-words)
  * [Text summarization](#text-summarization)
  * [Language generation](#language-generation)
@@ -134,12 +135,78 @@ Now you have three annotators and two scorers. Let's test them on unseen data.
 
 
 
-### Punny metaphor generation system
 
-This system builds on the simple **pun generation system** that
-you created on day 2.
+## Metaphor Generation System
+The goal of this task is to use knowledge bases of nouns along with their stereotypical adjectival properties (i.e. adjectives that are strongly associated with the nouns) to generate metaphorical expressions.
 
-*Further description to be added here*
+You can use the knowledge bases provided in [Prosecco Network's Github](https://github.com/prosecconetwork/ThesaurusRex) *Read the README file for descriptions of each file*. Alternatively, you can use other resources (e.g. word embeddings models) to obtain similar relations.
+
+In the resources, the file `expanded_weights.txt` contains inferred stereotypical relations, which makes it more extensive (see [this site](https://expanding-properties.mokha.pw/) for an interactive interface for expanding a seed list of properties). To download the knowledge base, execute the following command:
+
+````sh
+wget https://raw.githubusercontent.com/prosecconetwork/ThesaurusRex/master/expanded_weights.txt
+````
+
+You can read and parse the knowledge base using the below code:
+
+````python
+import io, re
+from collections import defaultdict
+def parse_members_rex_weights(file):
+  '''
+  Parses the `expanded_weights.txt` file and returns:
+  {
+      NOUN: {
+          PROPERTY: WEIGHT,
+          ...
+      }
+      ...
+  }
+  '''
+  weights = defaultdict(lambda: defaultdict(float))
+  rg_ptrn = re.compile(r"^(\d+)\. ([\d\w_\.\-\"\']+) \[(.*)\]$", re.UNICODE | re.IGNORECASE)  # magical regex pattern
+  with io.open(file, 'r', encoding='utf-8') as inp_file:
+    for l in inp_file:
+      matched = rg_ptrn.match(l).groups()
+      member = matched[1].replace('_', ' ')
+      properties = map(lambda p: p.replace(')', '').split('('), matched[2].replace(' ', '').split(','))
+      properties = map(lambda x: tuple([' '.join(x[0].split('_')[:-1]), float(x[1])]), properties)
+      properties = list(properties)
+      weights[member] = dict(properties)
+  return weights
+
+stereotypes = parse_members_rex_weights('expanded_weights.txt')
+````
+
+Now, you can use such knowledge base to create metaphors, similes and analogies. For instance, to produce a metaphor that highlights that someone is very brave, you need to find out a noun that is well-known to be brave. A simple code to do that is:
+
+````python
+brave_nouns = [(noun, properties['brave']) for noun, properties in stereotypes.items() if 'brave' in properties] # get brave nouns
+brave_nouns = sorted(brave_nouns, key=lambda k: k[1], reverse=True) # sort them based on the strength
+print(brave_nouns) # [(u'Hero', 1778.0), (u'Warrior', 1491.0), ...]
+````
+
+With this knowledge, you can construct some metaphorical templates (e.g. "X is Y") and fill them dynamically (refer to `Day 6 - Exercise 2: Very simple NLG`) with the knowledge you have depending on the context. Following the earlier example, you can produce metaphorical expressions like "X is a hero", "X is as brave as a hero", "Like a hero, X rescued the dog." and so on.
+
+Write a function that accepts a text and performs some analyses (e.g. POS tagging, dependency parsing, entity recognition). If the sentence contains a noun and an adjective that has an adverb with the relation `advmod`, the function would remove the adverb and, then, inject a metaphorical expression that fits the context. The insertion could be for example after the noun or at the beginning/end of the sentence. Don't complicate the system, just build a very simple proof-of-concept.
+
+Examples:
+* The lawyer was extremely aggressive.
+  * The lawyer was aggressive, like a monster.
+  * Like a boxer, the lawyer was aggressive.
+  * ...
+* Her lawyer is very annoying.
+  * Her lawyer is annoying, like a child.
+  * Like a bully, her lawyer is very annoying.
+  * ...
+
+
+### Pun Generation System
+The goal of this exercise is to extend the pun generator you have implemented during day 2 (feel free to use the model solution). Below are some ideas for improving it (you are free to improve it differently as long as you motivate your choices):
+
+* Build a generic pun generator (e.g. using words in `wordnet` or a dictionary of lemmatized words)
+* Consider specific prosody features (e.g. rhyme and alliteration)
+* Different pronunciation measurement (have a look at [abydos](https://github.com/chrislit/abydos))
 
 
 ### Identify similar words
