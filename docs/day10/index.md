@@ -22,6 +22,7 @@ Here are the suggestions we have for systems you might build. Further
 down the page, you'll find instructions, tips, ideas, etc. for each.
 
  * Temporal information extraction system
+ * Punny metaphor generation system
  * *More to come!*
 
 
@@ -29,7 +30,7 @@ down the page, you'll find instructions, tips, ideas, etc. for each.
 
 ### Temporal information extraction
 
-Here we continue working on the Temporal Information Exctraction problem,
+Here we can continue working on the Temporal Information Exctraction problem,
 which we started on day 8. It is assumed that you finished Day 8 assignments
 and have implemented two time-expression annotators: regex-based and
 spaCy-based.
@@ -41,12 +42,17 @@ their main strengths and weaknesses.
 
 Now try to find a method that would combine advantages of both annotators.
 
+The following instructions will take you through
+some further ways to develop your system. You are welcome to choose a
+different approach.
+
 #### Part 1: The best ever temporal expression annotator
 
-* Implement the third annotator, which would combine advantages of
+* Implement a third annotator, which would combine advantages of
   both annotators, using either regular expressions, or spaCy patterns, or both.
 
-You may use any other technology but try to reuse your code made for Exercises 1 and 2.
+You may use any other technology but try to reuse
+your code made for Exercises 1 and 2.
 
 * Process training data using this new annotator and run scorer.
   The aim is to yield a higher performance than any of the two previous annotators.
@@ -71,12 +77,12 @@ By this point you have seen a number of the scorer outputs.
 Most probably you would need to modify a function called `update_scores`.
 
 * Run a new scorer on the results obtained from all three annotators.
-  Do results have more sense for you? Why?
+  Do the results make more sense to you? Why?
 
 
 #### Part 3: Results and discussion
 
-Now you have three annotators and two scorers. Lets test them on unseen data.
+Now you have three annotators and two scorers. Let's test them on unseen data.
 
 * Download and unpack test set [test.zip](test.zip), process it with all
   your annotators and both scorers.
@@ -102,3 +108,11 @@ The data used in this assignment are taken from
 The shared task used much mpre elaborated annotation schema and consisted
 of several sub-tasks. More details on the tasks and the results can be
 found in the [organizers' paper](https://www.aclweb.org/anthology/S13-2001).
+
+
+### Punny metaphor generation system
+
+This system builds on the simple **pun generation system** that
+you created on day 2.
+
+*Further description to be added here*
