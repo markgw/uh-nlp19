@@ -136,7 +136,7 @@ Now you have three annotators and two scorers. Let's test them on unseen data.
 
 
 
-## Metaphor Generation System
+### Metaphor Generation System
 The goal of this task is to use knowledge bases of nouns along with their stereotypical adjectival properties (i.e. adjectives that are strongly associated with the nouns) to generate metaphorical expressions.
 
 You can use the knowledge bases provided in [Prosecco Network's Github](https://github.com/prosecconetwork/ThesaurusRex) *Read the README file for descriptions of each file*. Alternatively, you can use other resources (e.g. word embeddings models) to obtain similar relations.
