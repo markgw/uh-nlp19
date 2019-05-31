@@ -133,6 +133,11 @@ Now you have three annotators and two scorers. Let's test them on unseen data.
 * Do you see any ways to use a temporal expression annotator in any
   real application? Which one? Which steps should be done to deploy an annotator into production?
 
+> The data used in this assignment are taken from
+> [TempEval-3 Temporal Annotation Shared Task](https://www.cs.york.ac.uk/semeval-2013/task1/index.html).
+> The shared task used a much elaborate annotation schema and consisted
+> of several sub-tasks. More details on the tasks and the results can be
+> found in the [organizers' paper](https://www.aclweb.org/anthology/S13-2001).
 
 
 
